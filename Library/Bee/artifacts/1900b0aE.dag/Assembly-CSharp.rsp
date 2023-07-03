@@ -370,12 +370,15 @@
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.UI.ref.dll"
 -analyzer:"C:/Program Files/Unity/Hub/Editor/2022.3.1f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.Properties.SourceGenerator.dll"
 -analyzer:"C:/Program Files/Unity/Hub/Editor/2022.3.1f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.SourceGenerators.dll"
-"Assets/CameraFollow.cs"
-"Assets/Enemy.cs"
-"Assets/PlayerHealth.cs"
-"Assets/PlayerMovement.cs"
-"Assets/PointAndShoot.cs"
-"Assets/ZombieDamage.cs"
+"Assets/C# Scripts/Camera/CameraFollow.cs"
+"Assets/C# Scripts/Player/PlayerHealth.cs"
+"Assets/C# Scripts/Player/PlayerMovement.cs"
+"Assets/C# Scripts/Player/PointAndShoot.cs"
+"Assets/C# Scripts/Player/Shoot.cs"
+"Assets/C# Scripts/Zombie/SpawnZombie.cs"
+"Assets/C# Scripts/Zombie/Zombie.cs"
+"Assets/C# Scripts/Zombie/ZombieDamage.cs"
+"Assets/C# Scripts/Zombie/ZombieHealth.cs"
 -langversion:9.0
 
 /deterministic

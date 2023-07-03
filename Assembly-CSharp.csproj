@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{E1CE1FEE-67BE-6533-73AA-CC578BE80DCD}</ProjectGuid>
+    <ProjectGuid>{2B1FF7E8-981C-2279-426C-F05D8D24AF68}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -58,15 +58,15 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.3.1f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\PointAndShoot.cs" />
-    <Compile Include="Assets\Enemy.cs" />
-    <Compile Include="Assets\PlayerMovement.cs" />
-    <Compile Include="Assets\CameraFollow.cs" />
-    <Compile Include="Assets\PlayerHealth.cs" />
-    <Compile Include="Assets\ZombieDamage.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Assets\Horror post apocalypse Sound Free\license pack.txt" />
+    <Compile Include="Assets\C# Scripts\Zombie\ZombieHealth.cs" />
+    <Compile Include="Assets\C# Scripts\Zombie\ZombieDamage.cs" />
+    <Compile Include="Assets\C# Scripts\Player\PointAndShoot.cs" />
+    <Compile Include="Assets\C# Scripts\Camera\CameraFollow.cs" />
+    <Compile Include="Assets\C# Scripts\Zombie\Zombie.cs" />
+    <Compile Include="Assets\C# Scripts\Player\PlayerMovement.cs" />
+    <Compile Include="Assets\C# Scripts\Player\PlayerHealth.cs" />
+    <Compile Include="Assets\C# Scripts\Zombie\SpawnZombie.cs" />
+    <Compile Include="Assets\C# Scripts\Player\Shoot.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
