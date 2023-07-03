@@ -8,6 +8,8 @@ public class Zombie : MonoBehaviour{
     private Rigidbody2D rb;
     private Vector2 movement;
     public ZombieHealth zombiehealth;
+    private float timer;
+    public ZombieSoundManager soundmanager;
 
     // Start is called before the first frame update
     void Start()
@@ -24,7 +26,13 @@ public class Zombie : MonoBehaviour{
         rb.rotation = angle;
         direction.Normalize();
         movement = direction;
-        
+        timer += Time.deltaTime;
+
+        if (timer > 10f)
+        {
+            soundmanager.PlayZombieSound();
+            timer = 0f;
+        }
     }
 
     private void FixedUpdate(){
@@ -36,7 +44,5 @@ public class Zombie : MonoBehaviour{
     {
         rb.MovePosition((Vector2)transform.position + (direction * moveSpeed * Time.deltaTime));
     }
-
-
 
 }

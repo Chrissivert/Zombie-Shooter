@@ -375,9 +375,11 @@
 "Assets/C# Scripts/Player/PlayerMovement.cs"
 "Assets/C# Scripts/Player/PointAndShoot.cs"
 "Assets/C# Scripts/Player/Shoot.cs"
+"Assets/C# Scripts/Zombie/ManagerZombie.cs"
+"Assets/C# Scripts/Zombie/SoundManagerZombie.cs"
 "Assets/C# Scripts/Zombie/SpawnZombie.cs"
 "Assets/C# Scripts/Zombie/Zombie.cs"
-"Assets/C# Scripts/Zombie/ZombieDamage.cs"
+"Assets/C# Scripts/Zombie/ZombieCollision.cs"
 "Assets/C# Scripts/Zombie/ZombieHealth.cs"
 -langversion:9.0
 

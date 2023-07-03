@@ -59,12 +59,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\C# Scripts\Zombie\ZombieHealth.cs" />
-    <Compile Include="Assets\C# Scripts\Zombie\ZombieDamage.cs" />
     <Compile Include="Assets\C# Scripts\Player\PointAndShoot.cs" />
     <Compile Include="Assets\C# Scripts\Camera\CameraFollow.cs" />
     <Compile Include="Assets\C# Scripts\Zombie\Zombie.cs" />
+    <Compile Include="Assets\C# Scripts\Zombie\ZombieCollision.cs" />
     <Compile Include="Assets\C# Scripts\Player\PlayerMovement.cs" />
+    <Compile Include="Assets\C# Scripts\Zombie\SoundManagerZombie.cs" />
     <Compile Include="Assets\C# Scripts\Player\PlayerHealth.cs" />
+    <Compile Include="Assets\C# Scripts\Zombie\ManagerZombie.cs" />
     <Compile Include="Assets\C# Scripts\Zombie\SpawnZombie.cs" />
     <Compile Include="Assets\C# Scripts\Player\Shoot.cs" />
   </ItemGroup>

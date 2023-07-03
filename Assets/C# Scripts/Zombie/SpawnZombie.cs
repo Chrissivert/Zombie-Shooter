@@ -5,6 +5,7 @@ using UnityEngine;
 public class SpawnZombie : MonoBehaviour
 {
     public GameObject zombiePrefab;
+    public ManagerZombie managerZombie;
     public Transform player;
     public float initialSpawnInterval = 1f;
     public float spawnIntervalDecrease = 0.1f;
@@ -18,7 +19,7 @@ public class SpawnZombie : MonoBehaviour
         InvokeRepeating("SpawnNewZombie", currentSpawnInterval, currentSpawnInterval);
     }
 
-    private void SpawnNewZombie()
+    public void SpawnNewZombie()
     {
         // Calculate a random position around the player
         Vector3 randomPosition = Random.insideUnitCircle.normalized * 10f;
@@ -26,6 +27,7 @@ public class SpawnZombie : MonoBehaviour
 
         // Instantiate a new zombie at the calculated position
         GameObject newZombie = Instantiate(zombiePrefab, spawnPosition, Quaternion.identity);
+        managerZombie.AddZombie(newZombie);
 
         // Optional: Set up any additional settings or behavior for the new zombie
 
