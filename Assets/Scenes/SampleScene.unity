@@ -739,6 +739,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   zombies: []
+--- !u!114 &1186906119
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1186906092}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d98bc6c4d359bd4f89fedfba5ee77a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Force: 3
+  rb: {fileID: 9052191379186387184, guid: bdfcea9e18aad3b4e97cf7450b88af71, type: 3}
+  Blood2: {fileID: 9190807006411013062, guid: 29e9049773b506d46aa2a351a703db53, type: 3}
 --- !u!1 &1339268548
 GameObject:
   m_ObjectHideFlags: 0
@@ -1401,15 +1416,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 1476297981}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6387951fed4bb1248a8fc6a30a3802b2, type: 3}
+  m_Script: {fileID: 11500000, guid: 602013975c5ab5940a6426a7148436ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   crosshairs: {fileID: 1451202284}
   player: {fileID: 1476297981}
   bulletPrefab: {fileID: 6068640593767875106, guid: bdfcea9e18aad3b4e97cf7450b88af71, type: 3}
-  bulletStart: {fileID: 1396889064}
+  bulletStart: {fileID: 1476297981}
   Zombie: {fileID: 1186906092}
   mainCamera: {fileID: 519420031}
+  grenade: {fileID: 0}
   bulletSpeed: 30
   pistolShot: {fileID: 1476297990}
 --- !u!82 &1476297990
@@ -1868,6 +1884,10 @@ PrefabInstance:
       value: -0.23394999
       objectReference: {fileID: 0}
     - target: {fileID: 6699048556133891087, guid: 4d621e4b081d7e742bc2cb413d985314, type: 3}
+      propertyPath: blood
+      value: 
+      objectReference: {fileID: 1186906119}
+    - target: {fileID: 6699048556133891087, guid: 4d621e4b081d7e742bc2cb413d985314, type: 3}
       propertyPath: damage
       value: 10
       objectReference: {fileID: 0}
@@ -1954,7 +1974,10 @@ PrefabInstance:
       insertIndex: 4
       addedObject: {fileID: 1186906110}
     - targetCorrespondingSourceObject: {fileID: 1231766174163265639, guid: 4d621e4b081d7e742bc2cb413d985314, type: 3}
-      insertIndex: 7
+      insertIndex: 5
+      addedObject: {fileID: 1186906119}
+    - targetCorrespondingSourceObject: {fileID: 1231766174163265639, guid: 4d621e4b081d7e742bc2cb413d985314, type: 3}
+      insertIndex: 8
       addedObject: {fileID: 1186906102}
     - targetCorrespondingSourceObject: {fileID: 1231766174163265639, guid: 4d621e4b081d7e742bc2cb413d985314, type: 3}
       insertIndex: -1

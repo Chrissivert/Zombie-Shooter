@@ -32,7 +32,7 @@ public class ZombieCollision : MonoBehaviour
             Destroy(collision.gameObject);
             managerZombie.RemoveZombie(gameObject);
             blood.InstantiateBlood();
-            blood.DestroyBlood();
+            //blood.DestroyBlood();
         }
     }
 }
