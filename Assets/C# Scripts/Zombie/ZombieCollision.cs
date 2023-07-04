@@ -9,6 +9,7 @@ public class ZombieCollision : MonoBehaviour
     private float timer; // Timer to keep track of time passed
     public PlayerHealth player;
     public ManagerZombie managerZombie;
+    public Blood blood;
 
     private void Update()
     {
@@ -30,6 +31,8 @@ public class ZombieCollision : MonoBehaviour
             Destroy(gameObject);
             Destroy(collision.gameObject);
             managerZombie.RemoveZombie(gameObject);
+            blood.InstantiateBlood();
+            blood.DestroyBlood();
         }
     }
 }

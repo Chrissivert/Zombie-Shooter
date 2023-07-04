@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PointAndShoot : MonoBehaviour
+public class Player : MonoBehaviour
 {
     public GameObject crosshairs;
     public GameObject player;
@@ -10,6 +10,7 @@ public class PointAndShoot : MonoBehaviour
     public GameObject bulletStart;
     public GameObject Zombie;
     public Camera mainCamera;
+    public GameObject grenade;
 
     public float bulletSpeed = 30.0f;
 
@@ -26,6 +27,7 @@ public class PointAndShoot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         target = mainCamera.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, transform.position.z));
         crosshairs.transform.position = new Vector2(target.x, target.y);
 
@@ -40,6 +42,10 @@ public class PointAndShoot : MonoBehaviour
             direction.Normalize();
             fireBullet(direction, rotationZ);
         }
+
+        if (Input.GetKeyDown(KeyCode.I)) {
+            Instantiate(grenade, transform.position, Quaternion.identity);
+        }
     }
     void fireBullet(Vector2 direction, float rotationZ)
     {
@@ -49,5 +55,15 @@ public class PointAndShoot : MonoBehaviour
         b.GetComponent<Rigidbody2D>().velocity = direction * bulletSpeed;
         pistolShot.Play();
         Destroy(b, 3f);
+    }
+
+    public void CrosshairPlacement()
+    {
+        target = mainCamera.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, transform.position.z));
+        crosshairs.transform.position = new Vector2(target.x, target.y);
+
+        Vector3 difference = target - player.transform.position;
+        float rotationZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
+        player.transform.rotation = Quaternion.Euler(0.0f, 0.0f, rotationZ);
     }
 }

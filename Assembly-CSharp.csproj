@@ -62,13 +62,15 @@
     <Compile Include="Assets\C# Scripts\Player\PointAndShoot.cs" />
     <Compile Include="Assets\C# Scripts\Camera\CameraFollow.cs" />
     <Compile Include="Assets\C# Scripts\Zombie\Zombie.cs" />
+    <Compile Include="Assets\C# Scripts\Zombie\Blood.cs" />
     <Compile Include="Assets\C# Scripts\Zombie\ZombieCollision.cs" />
     <Compile Include="Assets\C# Scripts\Player\PlayerMovement.cs" />
     <Compile Include="Assets\C# Scripts\Zombie\SoundManagerZombie.cs" />
+    <Compile Include="Assets\OpenClose.cs" />
     <Compile Include="Assets\C# Scripts\Player\PlayerHealth.cs" />
+    <Compile Include="Assets\C# Scripts\Grenade\Grenade.cs" />
     <Compile Include="Assets\C# Scripts\Zombie\ManagerZombie.cs" />
     <Compile Include="Assets\C# Scripts\Zombie\SpawnZombie.cs" />
-    <Compile Include="Assets\C# Scripts\Player\Shoot.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
