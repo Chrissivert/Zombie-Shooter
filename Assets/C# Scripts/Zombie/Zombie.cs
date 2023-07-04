@@ -3,46 +3,38 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Zombie : MonoBehaviour{ 
-    public Transform player;
-    public float moveSpeed = 5f;
-    private Rigidbody2D rb;
-    private Vector2 movement;
-    public ZombieHealth zombiehealth;
-    private float timer;
-    public ZombieSoundManager soundmanager;
+    public float zombiehealth;
+    public List<GameObject> zombies;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        rb = this.GetComponent<Rigidbody2D>();
-        
-    }
-
-    // Update is called once per frame
     void Update()
     {
-        Vector3 direction = player.position - transform.position;
-        float angle = Mathf.Atan2(direction.x, direction.y) * Mathf.Rad2Deg;
-        rb.rotation = angle;
-        direction.Normalize();
-        movement = direction;
-        timer += Time.deltaTime;
-
-        if (timer > 10f)
+        if (zombiehealth <= 0)
         {
-            soundmanager.PlayZombieSound();
-            timer = 0f;
+            Destroy(gameObject);
         }
     }
 
-    private void FixedUpdate(){
-        moveCharacter(movement);
+    public void RemoveHealth(float damage)
+    {
+        zombiehealth -= damage;
+    }
+
+    public void AddHealth(float healingAmount)
+    {
+        zombiehealth += healingAmount;
+        zombiehealth = Mathf.Clamp(zombiehealth, 0, 100);
 
     }
 
-    void moveCharacter(Vector2 direction)
+    public void RemoveZombie(GameObject zombie)
     {
-        rb.MovePosition((Vector2)transform.position + (direction * moveSpeed * Time.deltaTime));
+        zombies.Remove(zombie);
+
+    }
+
+    public void AddZombie(GameObject zombie)
+    {
+        zombies.Add(zombie);
     }
 
 }

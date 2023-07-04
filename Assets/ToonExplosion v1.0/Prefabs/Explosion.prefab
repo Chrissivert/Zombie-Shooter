@@ -178,8 +178,8 @@ GameObject:
   m_Component:
   - component: {fileID: 443466}
   - component: {fileID: 9510688}
-  - component: {fileID: 2541777146299187887}
   - component: {fileID: 9060162174899693575}
+  - component: {fileID: 868504760705298257}
   m_Layer: 0
   m_Name: ExpAnimator
   m_TagString: Untagged
@@ -227,18 +227,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &2541777146299187887
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 120280}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 69fd8e24f08aca745aa8ae8b53c4333a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!111 &9060162174899693575
 Animation:
   m_ObjectHideFlags: 0
@@ -254,6 +242,19 @@ Animation:
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
   m_CullingType: 0
+--- !u!114 &868504760705298257
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 120280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69fd8e24f08aca745aa8ae8b53c4333a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  explosionAnimation: {fileID: 9060162174899693575}
 --- !u!1 &139366
 GameObject:
   m_ObjectHideFlags: 0

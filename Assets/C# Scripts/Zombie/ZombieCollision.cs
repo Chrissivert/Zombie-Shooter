@@ -4,16 +4,16 @@ using UnityEngine;
 
 public class ZombieCollision : MonoBehaviour
 {
-    public int damage;
-    public float damageInterval = 0.5f; // Time interval between each damage
-    private float timer; // Timer to keep track of time passed
+    public int zombiedamage;
+    public int bulletdamage;
+    public float damageInterval = 0.5f;
+    private float timer;
     public PlayerHealth player;
-    public ManagerZombie managerZombie;
+    public Zombie zombie;
     public Blood blood;
 
     private void Update()
     {
-        // Update the timer
         timer += Time.deltaTime;
     }
 
@@ -22,17 +22,16 @@ public class ZombieCollision : MonoBehaviour
         // Check if enough time has passed since the last damage
         if (timer >= damageInterval && collision.gameObject.CompareTag("Player"))
         {
-            player.TakeDamage(damage);
+            player.TakeDamage(zombiedamage);
             timer = 0f; // Reset the timer
         }
 
         if (collision.gameObject.CompareTag("Bullet"))
         {
-            Destroy(gameObject);
             Destroy(collision.gameObject);
-            managerZombie.RemoveZombie(gameObject);
+            zombie.RemoveHealth(bulletdamage);
             blood.InstantiateBlood();
-            //blood.DestroyBlood();
+            blood.DestroyBlood();
         }
     }
 }

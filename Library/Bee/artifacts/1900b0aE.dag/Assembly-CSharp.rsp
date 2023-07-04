@@ -371,18 +371,20 @@
 -analyzer:"C:/Program Files/Unity/Hub/Editor/2022.3.1f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.Properties.SourceGenerator.dll"
 -analyzer:"C:/Program Files/Unity/Hub/Editor/2022.3.1f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.SourceGenerators.dll"
 "Assets/C# Scripts/Camera/CameraFollow.cs"
+"Assets/C# Scripts/Camera/CreateZombie.cs"
+"Assets/C# Scripts/Grenade/Explosion.cs"
 "Assets/C# Scripts/Grenade/Grenade.cs"
+"Assets/C# Scripts/Grenade/OpenClose.cs"
 "Assets/C# Scripts/Player/PlayerHealth.cs"
 "Assets/C# Scripts/Player/PlayerMovement.cs"
 "Assets/C# Scripts/Player/PointAndShoot.cs"
+"Assets/C# Scripts/VolumeManager/VolumeManager.cs"
 "Assets/C# Scripts/Zombie/Blood.cs"
-"Assets/C# Scripts/Zombie/ManagerZombie.cs"
+"Assets/C# Scripts/Zombie/MovementZombie.cs"
 "Assets/C# Scripts/Zombie/SoundManagerZombie.cs"
 "Assets/C# Scripts/Zombie/SpawnZombie.cs"
 "Assets/C# Scripts/Zombie/Zombie.cs"
 "Assets/C# Scripts/Zombie/ZombieCollision.cs"
-"Assets/C# Scripts/Zombie/ZombieHealth.cs"
-"Assets/OpenClose.cs"
 -langversion:9.0
 
 /deterministic

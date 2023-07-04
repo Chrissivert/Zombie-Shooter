@@ -4,9 +4,11 @@ public class ExplosionController : MonoBehaviour
 {
     public Animation explosionAnimation; // Reference to the Animation component
 
-    public void StartExplosionAnimation()
+    private void Update()
     {
-        explosionAnimation["Explosion"].speed = 1.0f;
-        explosionAnimation.Play("Explosion");
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            explosionAnimation.Play();
+        }
     }
 }
