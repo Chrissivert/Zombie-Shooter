@@ -5,13 +5,13 @@ using UnityEngine;
 public class MovementZombie : MonoBehaviour
 {
     private Vector2 movement;
-    public Transform player;
     public Rigidbody2D rb;
     public float moveSpeed = 5f;
 
     private void Update()
     {
-        Vector3 direction = player.position - transform.position;
+        Vector3 playerPos = GameObject.Find("Player").transform.position;
+        Vector3 direction = playerPos - transform.position;
         float angle = Mathf.Atan2(direction.x, direction.y) * Mathf.Rad2Deg;
         rb.rotation = angle;
         direction.Normalize();

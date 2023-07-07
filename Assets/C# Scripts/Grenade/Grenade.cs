@@ -14,7 +14,7 @@ public class Grenade : MonoBehaviour
 
     void Start()
     {
-       targetPos = GameObject.Find("Direction").transform.position;
+       targetPos = GameObject.Find("crosshair").transform.position;
     }
 
     // Update is called once per frame

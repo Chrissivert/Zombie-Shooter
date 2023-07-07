@@ -8,9 +8,15 @@ public class ZombieCollision : MonoBehaviour
     public int bulletdamage;
     public float damageInterval = 0.5f;
     private float timer;
-    public PlayerHealth player;
     public Zombie zombie;
     public Blood blood;
+    PlayerHealth playerHealth;
+
+    private void Start()
+    {
+        GameObject player = GameObject.Find("Player");
+        playerHealth = player.GetComponent<PlayerHealth>();
+    }
 
     private void Update()
     {
@@ -22,7 +28,7 @@ public class ZombieCollision : MonoBehaviour
         // Check if enough time has passed since the last damage
         if (timer >= damageInterval && collision.gameObject.CompareTag("Player"))
         {
-            player.TakeDamage(zombiedamage);
+            playerHealth.TakeDamage(zombiedamage);
             timer = 0f; // Reset the timer
         }
 
@@ -31,7 +37,6 @@ public class ZombieCollision : MonoBehaviour
             Destroy(collision.gameObject);
             zombie.RemoveHealth(bulletdamage);
             blood.InstantiateBlood();
-            blood.DestroyBlood();
         }
     }
 }

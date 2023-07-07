@@ -69,7 +69,6 @@
     <Compile Include="Assets\C# Scripts\Zombie\ZombieCollision.cs" />
     <Compile Include="Assets\C# Scripts\Camera\CreateZombie.cs" />
     <Compile Include="Assets\C# Scripts\Player\PlayerMovement.cs" />
-    <Compile Include="Assets\C# Scripts\Grenade\OpenClose.cs" />
     <Compile Include="Assets\C# Scripts\Zombie\SoundManagerZombie.cs" />
     <Compile Include="Assets\C# Scripts\Player\PlayerHealth.cs" />
     <Compile Include="Assets\C# Scripts\Grenade\Grenade.cs" />

@@ -3,17 +3,13 @@ using System.Collections.Generic;
 using System.Threading;
 using UnityEngine;
 
-public class Zombie : MonoBehaviour{ 
+public class Zombie : MonoBehaviour
+{
     public float zombiehealth;
     public List<GameObject> zombies;
-    public ZombieSoundManager soundManager;
-    public float timer;
 
     void Update()
     {
-
-        timer = Time.deltaTime;
-
         if (zombiehealth <= 0)
         {
             Destroy(gameObject);

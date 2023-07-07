@@ -375,7 +375,6 @@
 "Assets/C# Scripts/Camera/CreateZombie.cs"
 "Assets/C# Scripts/Grenade/Explosion.cs"
 "Assets/C# Scripts/Grenade/Grenade.cs"
-"Assets/C# Scripts/Grenade/OpenClose.cs"
 "Assets/C# Scripts/Player/Direction.cs"
 "Assets/C# Scripts/Player/PlayerHealth.cs"
 "Assets/C# Scripts/Player/PlayerMovement.cs"
