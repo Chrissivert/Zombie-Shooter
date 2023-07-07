@@ -15,21 +15,23 @@ public class ZombieSoundManager : MonoBehaviour
         ChangeVolume(volume);
     }
 
-    private void Update()
+    private void Start()
     {
-       StartCoroutine(timeToWaitBasedOnAmountOfZombies(GetSoundInterval()));
+        StartCoroutine(PlayZombieSoundsRoutine());
     }
 
-    IEnumerator timeToWaitBasedOnAmountOfZombies(float timeToWait)
+    IEnumerator PlayZombieSoundsRoutine()
     {
         while (true)
         {
-            PlayZombieSound(RandomizeZombieSound());
+            float timeToWait = GetSoundInterval();
             yield return new WaitForSeconds(timeToWait);
+
+            PlayZombieSound(RandomizeZombieSound());
         }
     }
 
-    private AudioClip RandomizeZombieSound()
+    public AudioClip RandomizeZombieSound()
     {
         if (zombieSounds.Length > 0)
         {
@@ -40,7 +42,6 @@ public class ZombieSoundManager : MonoBehaviour
         return audioSource.clip;
     }
 
-    // Call this method when you want the zombie to play a sound
     public void PlayZombieSound(AudioClip zombieClip)
     {
         audioSource.Play();
@@ -49,17 +50,19 @@ public class ZombieSoundManager : MonoBehaviour
     private float GetSoundInterval()
     {
         int zombieCount = zombie.zombies.Count;
-        float interval = 0.5f / (zombieCount + 1); // Increase the divisor to reduce the frequency
+        float maxInterval = 600f; // Adjust this value as desired
+        float maxZombieCount = 100f; // Adjust this value as desired
 
-      return interval;
+        // Calculate the interval based on the number of zombies
+        float interval = Mathf.Lerp(0f, maxInterval, Mathf.InverseLerp(0, maxZombieCount, zombieCount));
+        interval = Mathf.Clamp(interval, 1f, maxInterval);
+
+        return interval;
     }
 
     public void ChangeVolume(float newVolume)
     {
-        // Clamp the newVolume value between 0.0 and 1.0
         newVolume = Mathf.Clamp01(newVolume);
-
-        // Set the volume of the audio clip
         audioSource.volume = newVolume;
     }
 }

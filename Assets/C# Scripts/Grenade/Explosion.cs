@@ -1,18 +1,28 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class Explosion : MonoBehaviour
+public class MyScript : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public float radius = 5;
+
+    private void Update()
     {
-        
+        Collider2D[] enemyHitExplosion = Physics2D.OverlapCircleAll(transform.position, radius);
+
+        foreach(Collider2D col in enemyHitExplosion)
+        {
+            Zombie zombie = col.GetComponent<Zombie>();
+            zombie.RemoveHealth(9999);
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnDestroy()
     {
-        
+        Destroy(gameObject);
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.black;
+        Gizmos.DrawSphere(transform.position, radius);
     }
 }

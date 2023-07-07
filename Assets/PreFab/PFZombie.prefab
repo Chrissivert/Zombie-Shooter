@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 5343502683870620781}
   - component: {fileID: 6506786000593513427}
   - component: {fileID: 13848170033410665}
-  - component: {fileID: 8982979971359490941}
   - component: {fileID: 2678529502702762138}
   - component: {fileID: 6699048556133891087}
   - component: {fileID: 727522899614863438}
@@ -53,7 +52,109 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   zombiehealth: 100
-  zombies: []
+  zombies:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  soundManager: {fileID: 6506786000593513427}
+  timer: 0
 --- !u!212 &5343502683870620781
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -118,9 +219,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79d1a5e5bcddaa547ad967c277ecca26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  zombieSounds: []
-  zombie: {fileID: 0}
-  volume: 0
+  zombieSounds:
+  - {fileID: 8300000, guid: f86087f6074c07142a8719fb7f5451a2, type: 3}
+  - {fileID: 8300000, guid: db3a32db93b998f4197e906bbe7a722b, type: 3}
+  - {fileID: 8300000, guid: be1d6e343ef537e49810686c9697dba5, type: 3}
+  zombie: {fileID: 3101039789956499104}
+  volume: 0.5
 --- !u!114 &13848170033410665
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -133,27 +237,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89797be773b12ed4aa262fb0f3d1ae2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 6991034040536139447}
+  player: {fileID: 7558222033957799882, guid: ef3b6763af52d9641857191f6708e638, type: 3}
   rb: {fileID: 727522899614863438}
   moveSpeed: 2
---- !u!114 &8982979971359490941
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1231766174163265639}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e14bdc252392bc54f98e1c5ef0574234, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  zombie: {fileID: 3101039789956499104}
-  zombiePrefab: {fileID: 1231766174163265639}
-  playerPosition: {fileID: 0}
-  initialSpawnInterval: 1
-  spawnIntervalDecrease: 0.1
-  minimumSpawnInterval: 0.5
 --- !u!114 &2678529502702762138
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -180,10 +266,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c509259e898975d4082be82ff78e63a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  zombiedamage: 0
-  bulletdamage: 0
+  zombiedamage: 2
+  bulletdamage: 50
   damageInterval: 0.5
-  player: {fileID: 0}
+  player: {fileID: 7606586819516563266, guid: ef3b6763af52d9641857191f6708e638, type: 3}
   zombie: {fileID: 3101039789956499104}
   blood: {fileID: 2678529502702762138}
 --- !u!50 &727522899614863438

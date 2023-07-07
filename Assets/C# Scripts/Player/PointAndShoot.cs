@@ -2,19 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour
+public class PointAndShoot : MonoBehaviour
 {
-    public GameObject crosshairs;
     public GameObject player;
     public GameObject bulletPrefab;
     public GameObject bulletStart;
-    public GameObject Zombie;
-    public Camera mainCamera;
     public GameObject grenade;
+    public Direction direction;
 
     public float bulletSpeed = 30.0f;
-
-    private Vector3 target;
 
     [SerializeField] private AudioSource pistolShot;
 
@@ -28,10 +24,7 @@ public class Player : MonoBehaviour
     void Update()
     {
 
-        target = mainCamera.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, transform.position.z));
-        crosshairs.transform.position = new Vector2(target.x, target.y);
-
-        Vector3 difference = target - player.transform.position;
+        Vector3 difference = direction.DirectionUserIsPointingAt() - player.transform.position;
         float rotationZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
         player.transform.rotation = Quaternion.Euler(0.0f, 0.0f, rotationZ);
 
@@ -55,15 +48,5 @@ public class Player : MonoBehaviour
         b.GetComponent<Rigidbody2D>().velocity = direction * bulletSpeed;
         pistolShot.Play();
         Destroy(b, 3f);
-    }
-
-    public void CrosshairPlacement()
-    {
-        target = mainCamera.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, transform.position.z));
-        crosshairs.transform.position = new Vector2(target.x, target.y);
-
-        Vector3 difference = target - player.transform.position;
-        float rotationZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
-        player.transform.rotation = Quaternion.Euler(0.0f, 0.0f, rotationZ);
     }
 }
