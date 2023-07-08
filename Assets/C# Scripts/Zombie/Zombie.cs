@@ -7,6 +7,7 @@ public class Zombie : MonoBehaviour
 {
     public float zombiehealth;
     public List<GameObject> zombies;
+    private bool explosion;
 
     void Update()
     {
@@ -37,6 +38,22 @@ public class Zombie : MonoBehaviour
     public void AddZombie(GameObject zombie)
     {
         zombies.Add(zombie);
+    }
+
+    public void ExplosionDamage(int amount)
+    {
+        if (!explosion)
+        {
+            explosion = true;
+            zombiehealth -= amount;
+            StartCoroutine(CoolDown());
+        }
+    }
+
+    IEnumerator CoolDown()
+    {
+        yield return new WaitForSeconds(5f);
+        explosion = false;
     }
 
 }

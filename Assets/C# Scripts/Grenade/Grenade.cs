@@ -14,22 +14,22 @@ public class Grenade : MonoBehaviour
 
     void Start()
     {
-       targetPos = GameObject.Find("crosshair").transform.position;
+        targetPos = GameObject.Find("crosshair").transform.position;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(greneadeSpeed > 0)
+        if (greneadeSpeed > 0)
         {
             greneadeSpeed -= Random.Range(.1f, .25f);
             transform.position = Vector2.MoveTowards(transform.position, targetPos, greneadeSpeed * Time.deltaTime);
         }
-        else if(greneadeSpeed <= 0)
+        else if (greneadeSpeed <= 0)
         {
             greneadeSpeed = 0;
-            StartCoroutine(Explode(2));
-        }   
+            StartCoroutine(Explode(0f));
+        }
     }
 
     IEnumerator Explode(float time)
@@ -42,6 +42,9 @@ public class Grenade : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D target)
     {
-        if(target.tag == "Zombie") StartCoroutine(Explode(0));
+        if (target.tag == "Zombie" && greneadeSpeed <= 0)
+        {
+            StartCoroutine(Explode(0));
+        }
     }
 }

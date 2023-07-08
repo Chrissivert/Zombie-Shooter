@@ -3,6 +3,7 @@ using UnityEngine;
 public class MyScript : MonoBehaviour
 {
     public float radius = 5;
+    public float ExplosionDamageToZombie = 500;
 
     private void Update()
     {
@@ -11,7 +12,7 @@ public class MyScript : MonoBehaviour
         foreach(Collider2D col in enemyHitExplosion)
         {
             Zombie zombie = col.GetComponent<Zombie>();
-            zombie.RemoveHealth(9999);
+            if(zombie != null) zombie.RemoveHealth(ExplosionDamageToZombie);
         }
     }
 
