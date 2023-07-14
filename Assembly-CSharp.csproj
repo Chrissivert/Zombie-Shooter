@@ -65,7 +65,6 @@
     <Compile Include="Assets\C# Scripts\Zombie\DamageText.cs" />
     <Compile Include="Assets\C# Scripts\Grenade\Explosion.cs" />
     <Compile Include="Assets\C# Scripts\Zombie\Zombie.cs" />
-    <Compile Include="Assets\C# Scripts\Camera\CreateGrenade.cs" />
     <Compile Include="Assets\C# Scripts\Zombie\Blood.cs" />
     <Compile Include="Assets\C# Scripts\Zombie\ZombieCollision.cs" />
     <Compile Include="Assets\C# Scripts\Camera\CreateZombie.cs" />

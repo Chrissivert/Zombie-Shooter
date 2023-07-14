@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Blood : MonoBehaviour
 {
-    public Rigidbody2D rb;
     public GameObject Blood2;
 
     public void InstantiateBlood()
@@ -13,8 +12,5 @@ public class Blood : MonoBehaviour
         Destroy(bloodInstance, 0.1f);
     }
 
-    public void DestroyBlood()
-    {
-        Destroy(Blood2);
-    }
+
 }

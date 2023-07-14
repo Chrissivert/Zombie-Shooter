@@ -38,7 +38,7 @@ public class ZombieCollision : MonoBehaviour
             Destroy(collision.gameObject);
             zombie.RemoveHealth(bulletdamage);
             blood.InstantiateBlood();
-            damageText.InstantiateDamageText(bulletdamage);
+            damageText.InstantiateDamageText(bulletdamage, transform.position);
 
         }
     }
