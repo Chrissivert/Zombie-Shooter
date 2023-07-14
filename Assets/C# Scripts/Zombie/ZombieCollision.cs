@@ -10,6 +10,7 @@ public class ZombieCollision : MonoBehaviour
     private float timer;
     public Zombie zombie;
     public Blood blood;
+    public DamageText damageText;
     PlayerHealth playerHealth;
 
     private void Start()
@@ -37,6 +38,8 @@ public class ZombieCollision : MonoBehaviour
             Destroy(collision.gameObject);
             zombie.RemoveHealth(bulletdamage);
             blood.InstantiateBlood();
+            damageText.InstantiateDamageText(bulletdamage);
+
         }
     }
 }

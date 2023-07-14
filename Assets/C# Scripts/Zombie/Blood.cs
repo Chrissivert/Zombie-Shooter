@@ -6,7 +6,6 @@ public class Blood : MonoBehaviour
 {
     public Rigidbody2D rb;
     public GameObject Blood2;
-    public Zombie zombie;
 
     public void InstantiateBlood()
     {

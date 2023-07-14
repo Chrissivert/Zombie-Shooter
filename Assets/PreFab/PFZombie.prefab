@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3101039789956499104}
   - component: {fileID: 5343502683870620781}
   - component: {fileID: 6506786000593513427}
+  - component: {fileID: 8478114580412033180}
   - component: {fileID: 13848170033410665}
   - component: {fileID: 2678529502702762138}
   - component: {fileID: 6699048556133891087}
@@ -54,6 +55,116 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   zombiehealth: 100
   zombies:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
@@ -338,6 +449,19 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 0119d22e0350ed44d9322f213c42f60e, type: 3}
   zombie: {fileID: 3101039789956499104}
   volume: 0.1
+--- !u!114 &8478114580412033180
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1231766174163265639}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e2e11890d6751f458f616e45634ebfd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damagePrefab: {fileID: 7958734042637098871, guid: 55c1380a02dfa8a469c8fd6a4ad4cc5d, type: 3}
 --- !u!114 &13848170033410665
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -379,10 +503,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   zombiedamage: 10
-  bulletdamage: 50
+  bulletdamage: 21
   damageInterval: 0.5
   zombie: {fileID: 3101039789956499104}
   blood: {fileID: 2678529502702762138}
+  damageText: {fileID: 8478114580412033180}
 --- !u!50 &727522899614863438
 Rigidbody2D:
   serializedVersion: 4

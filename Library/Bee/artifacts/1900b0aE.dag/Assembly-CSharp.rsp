@@ -381,6 +381,7 @@
 "Assets/C# Scripts/Player/PointAndShoot.cs"
 "Assets/C# Scripts/VolumeManager/VolumeManager.cs"
 "Assets/C# Scripts/Zombie/Blood.cs"
+"Assets/C# Scripts/Zombie/DamageText.cs"
 "Assets/C# Scripts/Zombie/MovementZombie.cs"
 "Assets/C# Scripts/Zombie/SoundManagerZombie.cs"
 "Assets/C# Scripts/Zombie/Zombie.cs"
