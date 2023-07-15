@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 5343502683870620781}
   - component: {fileID: 6506786000593513427}
   - component: {fileID: 13848170033410665}
-  - component: {fileID: 2678529502702762138}
   - component: {fileID: 6699048556133891087}
   - component: {fileID: 727522899614863438}
   - component: {fileID: 4127908918866369428}
@@ -872,19 +871,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 727522899614863438}
   moveSpeed: 2
---- !u!114 &2678529502702762138
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1231766174163265639}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1d98bc6c4d359bd4f89fedfba5ee77a8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Blood2: {fileID: 9190807006411013062, guid: 29e9049773b506d46aa2a351a703db53, type: 3}
 --- !u!114 &6699048556133891087
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -901,8 +887,8 @@ MonoBehaviour:
   bulletdamage: 21
   damageInterval: 0.5
   zombie: {fileID: 3101039789956499104}
-  blood: {fileID: 2678529502702762138}
-  damageText: {fileID: 235107101842875880, guid: 55c1380a02dfa8a469c8fd6a4ad4cc5d, type: 3}
+  blood: {fileID: 6488823110593924756, guid: 29e9049773b506d46aa2a351a703db53, type: 3}
+  damageText: {fileID: 8103831027528043079, guid: 55c1380a02dfa8a469c8fd6a4ad4cc5d, type: 3}
 --- !u!50 &727522899614863438
 Rigidbody2D:
   serializedVersion: 4
