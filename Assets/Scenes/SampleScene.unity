@@ -231,9 +231,9 @@ MonoBehaviour:
   zombie: {fileID: 3101039789956499104, guid: 4d621e4b081d7e742bc2cb413d985314, type: 3}
   zombiePrefab: {fileID: 1231766174163265639, guid: 4d621e4b081d7e742bc2cb413d985314, type: 3}
   playerPosition: {fileID: 807674923}
-  amountOfZombiesToSpawn: 10
+  amountOfZombiesToSpawn: 8
   amountOfWaves: 5
-  timeBetweenWaves: 5
+  timeBetweenWaves: 15
 --- !u!4 &197068080
 Transform:
   m_ObjectHideFlags: 0
@@ -840,6 +840,7 @@ MonoBehaviour:
   grenade: {fileID: 7180416415016333312, guid: fc5d4b4915b481f4eac95db7d36482fc, type: 3}
   direction: {fileID: 607727143}
   bulletSpeed: 30
+  shootDelay: 0.3
   pistolShot: {fileID: 807674915}
 --- !u!50 &807674921
 Rigidbody2D:
@@ -928,7 +929,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 807674914}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 6.2920837, y: 3.4579184, z: 0.19798389}
+  m_LocalPosition: {x: -1.66, y: 0.17, z: 0.19798389}
   m_LocalScale: {x: 0.27607998, y: 0.23997, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1243,6 +1244,53 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1516958713
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1516958714}
+  - component: {fileID: 1516958715}
+  m_Layer: 0
+  m_Name: PowerUp
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1516958714
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1516958713}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.43, y: 4.41, z: 7.2297254}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1516958715
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1516958713}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d5b1ba9594cd5e40ab517a254659d6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  powerUpPrefab: {fileID: 6145782390351184774, guid: 39c9101014147fe45baf82bff706b3b2, type: 3}
+  minSpawnPosition: {x: -5, y: 0, z: -5}
+  maxSpawnPosition: {x: 10, y: 20, z: 55}
 --- !u!1 &1593902352
 GameObject:
   m_ObjectHideFlags: 0

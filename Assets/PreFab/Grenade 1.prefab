@@ -9,8 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 525572881829971253}
-  - component: {fileID: 7346551374928769323}
   - component: {fileID: 1669159253680914387}
+  - component: {fileID: 1817659348620069466}
   m_Layer: 0
   m_Name: Grenade 1
   m_TagString: Bomb
@@ -33,23 +33,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7346551374928769323
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7180416415016333312}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a287a5255ee974b43b22c17e4a5c467d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  greneadeSpeed: 20
-  explosion: {fileID: 139366, guid: b185c1a9cf067374586d095111b15bd1, type: 3}
-  radius: 2
-  ExplosionDamageToZombie: 100
-  damageText: {fileID: 235107101842875880, guid: 55c1380a02dfa8a469c8fd6a4ad4cc5d, type: 3}
 --- !u!212 &1669159253680914387
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -102,3 +85,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1817659348620069466
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7180416415016333312}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a287a5255ee974b43b22c17e4a5c467d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  greneadeSpeed: 20
+  explosion: {fileID: 139366, guid: b185c1a9cf067374586d095111b15bd1, type: 3}
+  radius: 2
+  ExplosionDamageToZombie: 100
+  damageText: {fileID: 8103831027528043079, guid: 55c1380a02dfa8a469c8fd6a4ad4cc5d, type: 3}
