@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 369409931757997819}
   - component: {fileID: 8103831027528043079}
   - component: {fileID: 7676783782579469433}
-  - component: {fileID: 235107101842875880}
   m_Layer: 0
   m_Name: DamageText
   m_TagString: Untagged
@@ -92,6 +91,8 @@ MonoBehaviour:
   damagePrefab: {fileID: 7958734042637098871}
   fadeDuration: 2
   zombiePosition: {fileID: 6991034040536139447, guid: 4d621e4b081d7e742bc2cb413d985314, type: 3}
+  normalColor: {r: 1, g: 1, b: 1, a: 1}
+  criticalColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!102 &7676783782579469433
 TextMesh:
   serializedVersion: 3
@@ -114,18 +115,3 @@ TextMesh:
   m_Color:
     serializedVersion: 2
     rgba: 4294967295
---- !u!114 &235107101842875880
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7958734042637098871}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8e2e11890d6751f458f616e45634ebfd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damagePrefab: {fileID: 7958734042637098871}
-  fadeDuration: 2
-  zombiePosition: {fileID: 6991034040536139447, guid: 4d621e4b081d7e742bc2cb413d985314, type: 3}

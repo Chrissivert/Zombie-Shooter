@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    private float originalMoveSpeed;
     public float moveSpeed;
+    public float maxAllowedMoveSpeed = 10f;
     public Rigidbody2D rb;
     private Vector2 moveDirection;
 
@@ -30,5 +32,23 @@ public class PlayerMovement : MonoBehaviour
     void Move()
     {
         rb.velocity = new Vector2(moveDirection.x * moveSpeed, moveDirection.y * moveSpeed);
+    }
+
+    public void UpdateMovementSpeed(float moveSpeedMultiplier, int duration)
+    {
+        originalMoveSpeed = moveSpeed;
+        moveSpeed = moveSpeed * moveSpeedMultiplier;
+        if (moveSpeed > maxAllowedMoveSpeed)
+        {
+            moveSpeed = maxAllowedMoveSpeed;
+        }
+
+        StartCoroutine(RevertMovementSpeed(duration));
+    }
+
+    private IEnumerator RevertMovementSpeed(float duration)
+    {
+        yield return new WaitForSeconds(duration);
+        originalMoveSpeed = moveSpeed;
     }
 }

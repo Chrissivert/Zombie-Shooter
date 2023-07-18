@@ -12,6 +12,9 @@ public class DamageText : MonoBehaviour
     private float fadeTimer;
     public Transform zombiePosition;
 
+    public Color normalColor = Color.white;
+    public Color criticalColor = Color.red;
+
     private void Start()
     {
         textMesh = GetComponent<TextMesh>();
@@ -33,9 +36,21 @@ public class DamageText : MonoBehaviour
         }
     }
 
-        public void InstantiateDamageText(int damage, Vector3 zombiePosition)
+    public void InstantiateDamageText(int damage, Vector3 zombiePosition, bool isCriticalHit)
     {
         GameObject damageInstance = Instantiate(damagePrefab, zombiePosition, Quaternion.identity);
-        damageInstance.GetComponent<TextMesh>().text = damage.ToString();
+        textMesh = damageInstance.GetComponent<TextMesh>();
+
+        if (isCriticalHit)
+        {
+            textMesh.color = criticalColor;
+        }
+        else
+        {
+            textMesh.color = normalColor;
+        }
+
+        textMesh.text = damage.ToString();
     }
+
 }

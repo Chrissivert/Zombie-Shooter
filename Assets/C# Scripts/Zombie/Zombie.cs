@@ -9,11 +9,18 @@ public class Zombie : MonoBehaviour
     public List<GameObject> zombies;
     private bool explosion;
 
+    private void Awake()
+    {
+        zombies.Clear();
+    }
+
     void Update()
     {
         if (zombiehealth <= 0)
         {
+            RemoveZombie(gameObject);
             Destroy(gameObject);
+            zombies.Clear();
         }
     }
 
@@ -38,6 +45,11 @@ public class Zombie : MonoBehaviour
     public void AddZombie(GameObject zombie)
     {
         zombies.Add(zombie);
+    }
+
+    public List<GameObject> GetListOfZombies()
+    {
+        return zombies;
     }
 
     public void ExplosionDamage(int amount)

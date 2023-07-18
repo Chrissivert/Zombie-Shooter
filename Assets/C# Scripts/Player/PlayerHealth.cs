@@ -5,38 +5,27 @@ using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
-
     public Image healthBar;
     public float healthAmount = 100f;
+    private float timer = 0f;
 
     [SerializeField] private AudioSource takeDamage;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
     {
+        timer += Time.deltaTime;
 
         if (healthAmount <= 0)
         {
             Application.LoadLevel(Application.loadedLevel);
         }
 
-
-        if (Input.GetKeyUp(KeyCode.T))
+        if (healthAmount < 100 && timer >= 1 )
         {
-            TakeDamage(20);
+            Heal(4);
+            timer = 0;
         }
-
-        if (Input.GetKeyUp(KeyCode.E))
-        {
-            Heal(5);
-        }
-
     }
 
     public void TakeDamage(float damage)

@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class SpawnPowerUp : MonoBehaviour
     {
-        public GameObject powerUpPrefab; // The prefab of the power-up
-        public Vector3 minSpawnPosition = new Vector3(-9f, 0f, 0f); // The minimum position of the spawn area
-        public Vector3 maxSpawnPosition = new Vector3(7f, 9f, 0f); // The maximum position of the spawn area
+
+         public float timeBetweenEachPowerUp = 3f;
+         public GameObject[] powerUpPrefabs; // The prefab of the power-up
+         public Vector3 minSpawnPosition = new Vector3(-9f, 0f, 0f); // The minimum position of the spawn area
+         public Vector3 maxSpawnPosition = new Vector3(7f, 9f, 0f); // The maximum position of the spawn area
 
         private Coroutine spawnCoroutine; // Reference to the active spawn coroutine
 
@@ -22,13 +24,15 @@ public class SpawnPowerUp : MonoBehaviour
         {
             while (true)
             {
-                yield return new WaitForSeconds(15f);
+                yield return new WaitForSeconds(timeBetweenEachPowerUp);
 
                 // Generate a random position within the spawn area
                 Vector3 randomPosition = GetRandomPositionInArea();
 
-                // Instantiate the power-up prefab at the random position
-                Instantiate(powerUpPrefab, randomPosition, Quaternion.identity);
+            int randomIndex = Random.Range(0, powerUpPrefabs.Length);
+
+            // Instantiate the power-up prefab at the random position
+            Instantiate(powerUpPrefabs[randomIndex], randomPosition, Quaternion.identity);
             }
         }
 

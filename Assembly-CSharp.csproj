@@ -64,16 +64,46 @@
     <Compile Include="Assets\C# Scripts\Player\Direction.cs" />
     <Compile Include="Assets\C# Scripts\Camera\CameraFollow.cs" />
     <Compile Include="Assets\C# Scripts\Zombie\Blood and Text\DamageText.cs" />
+    <Compile Include="Assets\C# Scripts\ScoreVisual.cs" />
     <Compile Include="Assets\C# Scripts\VolumeManager\VolumeManager.cs" />
-    <Compile Include="Assets\C# Scripts\Player\Grenade\Grenade.cs" />
+    <Compile Include="Assets\C# Scripts\AmountOfZombiesText.cs" />
     <Compile Include="Assets\C# Scripts\Zombie\Zombie.cs" />
+    <Compile Include="Assets\C# Scripts\NukePowerUp.cs" />
+    <Compile Include="Assets\C# Scripts\CreateScoreTxt.cs" />
+    <Compile Include="Assets\C# Scripts\ScreenFlash.cs" />
+    <Compile Include="Assets\C# Scripts\Grenade.cs" />
+    <Compile Include="Assets\C# Scripts\ScoreManager.cs" />
     <Compile Include="Assets\C# Scripts\Zombie\ZombieCollision.cs" />
     <Compile Include="Assets\C# Scripts\Camera\CreateZombie.cs" />
     <Compile Include="Assets\C# Scripts\Player\PlayerMovement.cs" />
     <Compile Include="Assets\C# Scripts\Zombie\SoundManagerZombie.cs" />
     <Compile Include="Assets\C# Scripts\Player\PlayerHealth.cs" />
     <Compile Include="Assets\C# Scripts\Zombie\Blood and Text\Blood.cs" />
+    <Compile Include="Assets\C# Scripts\IncreaseSpeed.cs" />
     <Compile Include="Assets\C# Scripts\Zombie\MovementZombie.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />
+    <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile SSD.shader" />
+    <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMPro_Properties.cginc" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMPro_Surface.cginc" />
+    <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />
+    <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_Sprite.shader" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

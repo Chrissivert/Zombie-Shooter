@@ -21,7 +21,8 @@ public class CreateZombie : MonoBehaviour
         for (int i = 0; AmountOfZombies > i; i++)
         {
             Vector3 randomPosition = Random.insideUnitCircle.normalized * 10f;
-            Vector3 spawnPosition = playerPosition.position + randomPosition;
+            Vector3 playerPos = GameObject.Find("Player").transform.position;
+            Vector3 spawnPosition = playerPos + randomPosition;
 
             GameObject newZombie = Instantiate(zombiePrefab, spawnPosition, Quaternion.identity);
             zombie.AddZombie(newZombie);
