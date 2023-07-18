@@ -13,7 +13,6 @@ public class Grenade : MonoBehaviour
     public int ExplosionDamageToZombie = 1;
     public DamageText damageText;
     private HashSet<Zombie> damagedZombies;
-    // Start is called before the first frame update
 
     void Start()
     {
@@ -59,5 +58,4 @@ public class Grenade : MonoBehaviour
             }
         }
     }
-
 }

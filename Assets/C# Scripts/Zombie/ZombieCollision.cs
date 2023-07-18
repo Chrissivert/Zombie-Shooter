@@ -73,7 +73,6 @@ public class ZombieCollision : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Bullet"))
         {
-            Debug.Log("Inside exit");
             SetZombieHitByBullet(false);
         }
     }

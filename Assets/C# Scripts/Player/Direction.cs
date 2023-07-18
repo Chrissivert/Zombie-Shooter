@@ -7,19 +7,15 @@ public class Direction : MonoBehaviour
 {
     public GameObject player;
     private Vector3 target;
+    public GameObject bulletStart;
     public Camera mainCamera;
-    public GameObject crosshairs;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
+    public GameObject crosshair;
+    
     void Update()
     {
         DirectionUserIsPointingAt();
         UpdateCrossHairPlacement();
+        // UpdateBulletStartRotation();
     }
 
     public Vector3 DirectionUserIsPointingAt()
@@ -30,6 +26,18 @@ public class Direction : MonoBehaviour
 
     void UpdateCrossHairPlacement()
     {
-        crosshairs.transform.position = new Vector2(target.x, target.y);
+        crosshair.transform.position = new Vector2(target.x, target.y);
     }
+
+    // void UpdateBulletStartRotation()
+    // {
+    //     Vector3 direction = DirectionUserIsPointingAt();
+    //     float rotationZ = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+    //
+    //     // Calculate the rotation around the x-axis
+    //     float rotationX = Mathf.Atan2(direction.z, Mathf.Sqrt(direction.x * direction.x + direction.y * direction.y)) * Mathf.Rad2Deg;
+    //
+    //     bulletStart.transform.rotation = Quaternion.Euler(rotationX, 0.0f, rotationZ);
+    // }
+
 }
