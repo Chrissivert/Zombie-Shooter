@@ -6,6 +6,11 @@ public class IncreaseFireRate : MonoBehaviour
     public float doublefirerateduration = 20f;
     public bool fireratePowerUpActivated = false;
 
+    private void Start()
+    {
+        fireratePowerUpActivated = false;
+    }
+
     private void OnCollisionStay2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
@@ -14,12 +19,11 @@ public class IncreaseFireRate : MonoBehaviour
             Destroy(gameObject);
             DoublePlayersFireRate(collision.gameObject);
         }
-        Debug.Log(fireratePowerUpActivated);
     }
 
     public void DoublePlayersFireRate(GameObject player)
     {
-        UpdateWeaponAttributes updateWeaponAttributes = player.GetComponent<UpdateWeaponAttributes>();
-        updateWeaponAttributes.UpdateShootDelay(doublefirerateduration);
+        WeaponAttributes weaponAttributes = player.GetComponent<WeaponAttributes>();
+        weaponAttributes.UpdateShootDelay(doublefirerateduration);
     }
 }

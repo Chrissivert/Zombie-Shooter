@@ -49,6 +49,7 @@
      <Compile Include="Assets\C# Scripts\DoubleFireRate.cs" />
      <Compile Include="Assets\C# Scripts\Player\PointAndShoot.cs" />
      <Compile Include="Assets\C# Scripts\Player\Direction.cs" />
+     <Compile Include="Assets\C# Scripts\WeaponAttributes.cs" />
      <Compile Include="Assets\C# Scripts\Camera\CameraFollow.cs" />
      <Compile Include="Assets\C# Scripts\Zombie\Blood and Text\DamageText.cs" />
      <Compile Include="Assets\C# Scripts\ScoreVisual.cs" />
@@ -67,7 +68,6 @@
      <Compile Include="Assets\C# Scripts\Camera\CreateZombie.cs" />
      <Compile Include="Assets\C# Scripts\Player\PlayerMovement.cs" />
      <Compile Include="Assets\C# Scripts\Zombie\SoundManagerZombie.cs" />
-     <Compile Include="Assets\C# Scripts\UpdateWeaponAttributes.cs" />
      <Compile Include="Assets\C# Scripts\Player\PlayerHealth.cs" />
      <Compile Include="Assets\C# Scripts\Zombie\Blood and Text\Blood.cs" />
      <Compile Include="Assets\C# Scripts\IncreaseSpeed.cs" />

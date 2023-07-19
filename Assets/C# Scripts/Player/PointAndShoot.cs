@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class PointAndShoot : MonoBehaviour
 {
@@ -10,7 +11,7 @@ public class PointAndShoot : MonoBehaviour
     public Direction direction;
     public GameObject grenade;
     public CurrentWeaponSprite currentWeaponSprite;
-    public UpdateWeaponAttributes updateWeaponAttributes;
+    [FormerlySerializedAs("updateWeaponAttributes")] public WeaponAttributes weaponAttributes;
     
     private float shootTimer = 0f;
 
@@ -27,7 +28,7 @@ public class PointAndShoot : MonoBehaviour
 
         shootTimer += Time.deltaTime;
 
-        if (Input.GetMouseButton(0) && shootTimer >= updateWeaponAttributes.getShootDelay())
+        if (Input.GetMouseButton(0) && shootTimer >= weaponAttributes.getShootDelay())
         {
             if (currentWeaponSprite.currentWeapon == "pistol")
             {
@@ -51,7 +52,7 @@ public class PointAndShoot : MonoBehaviour
         GameObject b = Instantiate(bulletPrefab) as GameObject;
         b.transform.position = bulletStart.transform.position;
         b.transform.rotation = Quaternion.Euler(0.0f, 0.0f, GetRotationOfPlayerAndCrosshair());
-        b.GetComponent<Rigidbody2D>().velocity = direction * updateWeaponAttributes.getBulletSpeed();
+        b.GetComponent<Rigidbody2D>().velocity = direction * weaponAttributes.getBulletSpeed();
         pistolShot.Play();
         
         Vector2 offset2 = direction * 0.01f;
@@ -62,8 +63,8 @@ public class PointAndShoot : MonoBehaviour
     void ShootSpreadBullets(Vector2 direction)
     {
         FireBullet(direction);
-        Quaternion spreadRotation1 = Quaternion.Euler(0.0f, 0.0f, updateWeaponAttributes.getShotgunSpreadAngle());
-        Quaternion spreadRotation2 = Quaternion.Euler(0.0f, 0.0f, -updateWeaponAttributes.getShotgunSpreadAngle());
+        Quaternion spreadRotation1 = Quaternion.Euler(0.0f, 0.0f, weaponAttributes.getShotgunSpreadAngle());
+        Quaternion spreadRotation2 = Quaternion.Euler(0.0f, 0.0f, -weaponAttributes.getShotgunSpreadAngle());
         
         FireBullet(spreadRotation1 * direction);
         FireBullet(spreadRotation2 * direction);
