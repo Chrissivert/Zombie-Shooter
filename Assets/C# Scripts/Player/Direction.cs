@@ -29,15 +29,4 @@ public class Direction : MonoBehaviour
         crosshair.transform.position = new Vector2(target.x, target.y);
     }
 
-    // void UpdateBulletStartRotation()
-    // {
-    //     Vector3 direction = DirectionUserIsPointingAt();
-    //     float rotationZ = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-    //
-    //     // Calculate the rotation around the x-axis
-    //     float rotationX = Mathf.Atan2(direction.z, Mathf.Sqrt(direction.x * direction.x + direction.y * direction.y)) * Mathf.Rad2Deg;
-    //
-    //     bulletStart.transform.rotation = Quaternion.Euler(rotationX, 0.0f, rotationZ);
-    // }
-
 }

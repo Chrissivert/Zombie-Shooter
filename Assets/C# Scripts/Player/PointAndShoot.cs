@@ -4,29 +4,26 @@ using UnityEngine;
 
 public class PointAndShoot : MonoBehaviour
 {
-    public GameObject currentWeapon;
     public GameObject player;
     public GameObject bulletPrefab;
     public GameObject bulletStart;
     public Direction direction;
     public GameObject grenade;
+    public CurrentWeaponSprite currentWeaponSprite;
 
-    private float originalShootDelay;
+    public float originalShootDelay;
     public float bulletSpeed = 30.0f;
     private float shootTimer = 0f;
     public float shootDelay = 0.25f;
-    public float spacingBetweenBullets = 0.3f;
+    public float shotgunSpreadAngle = 15f;
 
     [SerializeField] private AudioSource pistolShot;
     
     void Start()
     {
         Cursor.visible = false;
-        currentWeapon = GameObject.Find("pistol");
-        //GameObject player = GameObject.Find("Player");
     }
-
-    // Update is called once per frame
+    
     void Update()
     {
         player.transform.rotation = Quaternion.Euler(0.0f, 0.0f, GetRotationOfPlayerAndCrosshair());
@@ -35,10 +32,20 @@ public class PointAndShoot : MonoBehaviour
 
         if (Input.GetMouseButton(0) && shootTimer >= shootDelay)
         {
-            if (currentWeapon == GameObject.Find("pistol"))
+            if (currentWeaponSprite.currentWeapon == "pistol")
             {
-                ShootSpreadBullets(GetNormalizedVector2FromPlayerPosToCrosshair());     
+                FireBullet(GetNormalizedVector2FromPlayerPosToCrosshair());
                 shootTimer = 0f;
+                shootDelay = 0.25f;
+                bulletSpeed = 30f;
+            }
+
+            if (currentWeaponSprite.currentWeapon == "shotgun")
+            {
+                ShootSpreadBullets(GetNormalizedVector2FromPlayerPosToCrosshair());
+                shootTimer = 0f;
+                shootDelay = 0.75f;
+                bulletSpeed = 15f;
             }
         }
         
@@ -54,35 +61,19 @@ public class PointAndShoot : MonoBehaviour
         b.GetComponent<Rigidbody2D>().velocity = direction * bulletSpeed;
         pistolShot.Play();
         
-        float bulletSpacing = 0.2f; // Adjust this value to control the spacing
-        Vector2 offset2 = direction * bulletSpacing;
+        Vector2 offset2 = direction * 0.01f;
         b.transform.position = new Vector2(b.transform.position.x + offset2.x, b.transform.position.y + offset2.y);
-        
         Destroy(b, 3f);
     }
     
     void ShootSpreadBullets(Vector2 direction)
     {
-        float spreadAngle = 60f;
-        
         FireBullet(direction);
-        Quaternion spreadRotation1 = Quaternion.Euler(0.0f, 0.0f, spreadAngle);
-        Quaternion spreadRotation2 = Quaternion.Euler(0.0f, 0.0f, -spreadAngle);
+        Quaternion spreadRotation1 = Quaternion.Euler(0.0f, 0.0f, shotgunSpreadAngle);
+        Quaternion spreadRotation2 = Quaternion.Euler(0.0f, 0.0f, -shotgunSpreadAngle);
         
         FireBullet(spreadRotation1 * direction);
         FireBullet(spreadRotation2 * direction);
-
-
-        // Vector2 offset2 = CreateSpacingBetweenBullets(spacingBetweenBullets);
-        // b.transform.position = new Vector2(b.transform.position.x + offset2.x, b.transform.position.y + offset2.y);
-        
-    }
-
-
-    private Vector2 CreateSpacingBetweenBullets(float amountOfSpacing)
-    {
-        Vector2 offset = GetNormalizedVector2FromPlayerPosToCrosshair() * amountOfSpacing;
-        return offset;
     }
 
     private void ShootGrenade()
@@ -114,15 +105,20 @@ public class PointAndShoot : MonoBehaviour
 
 
 
-    public void UpdateShootDelay(float halfShootDelay, int duration)
-    {
-        originalShootDelay = shootDelay;
-        shootDelay = halfShootDelay / 2f;
-        if (shootDelay < 0.1f) {
-            shootDelay = 0.1f;
-        }
-        StartCoroutine(RevertShootDelayAfterDelay(duration));
-    }
+    // public void UpdateShootDelay(float duration)
+    // {
+    //     if (!isFireRateHalved)
+    //     {
+    //         originalShootDelay = shootDelay;
+    //         shootDelay /= 2f;
+    //     }
+    //     shootDelay /= 2f;
+    //     if (shootDelay < originalShootDelay/2f)
+    //     {
+    //         shootDelay = originalShootDelay/2f;
+    //     }
+    //     StartCoroutine(RevertShootDelayAfterDelay(duration));
+    // }
 
     private IEnumerator RevertShootDelayAfterDelay(float duration)
     {

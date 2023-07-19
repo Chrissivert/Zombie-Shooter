@@ -60,6 +60,7 @@
      <Compile Include="Assets\C# Scripts\PistolWeapon.cs" />
      <Compile Include="Assets\C# Scripts\CreateScoreTxt.cs" />
      <Compile Include="Assets\C# Scripts\ScreenFlash.cs" />
+     <Compile Include="Assets\C# Scripts\CurrentWeaponSprite.cs" />
      <Compile Include="Assets\C# Scripts\Grenade.cs" />
      <Compile Include="Assets\C# Scripts\ScoreManager.cs" />
      <Compile Include="Assets\C# Scripts\Zombie\ZombieCollision.cs" />

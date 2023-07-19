@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class IncreaseFireRate : MonoBehaviour
 {
-    public int doublefirerateduration = 20;
+    public float doublefirerateduration = 20f;
 
     private void OnCollisionStay2D(Collision2D collision)
     {
@@ -16,6 +16,6 @@ public class IncreaseFireRate : MonoBehaviour
     public void DoublePlayersFireRate(GameObject player)
     {
         PointAndShoot pointAndShoot = player.GetComponent<PointAndShoot>();
-        pointAndShoot.UpdateShootDelay(pointAndShoot.shootDelay, doublefirerateduration);
+        // pointAndShoot.UpdateShootDelay(doublefirerateduration);
     }
 }
