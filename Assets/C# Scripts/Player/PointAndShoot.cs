@@ -10,12 +10,9 @@ public class PointAndShoot : MonoBehaviour
     public Direction direction;
     public GameObject grenade;
     public CurrentWeaponSprite currentWeaponSprite;
-
-    public float originalShootDelay;
-    public float bulletSpeed = 30.0f;
+    public UpdateWeaponAttributes updateWeaponAttributes;
+    
     private float shootTimer = 0f;
-    public float shootDelay = 0.25f;
-    public float shotgunSpreadAngle = 15f;
 
     [SerializeField] private AudioSource pistolShot;
     
@@ -30,22 +27,18 @@ public class PointAndShoot : MonoBehaviour
 
         shootTimer += Time.deltaTime;
 
-        if (Input.GetMouseButton(0) && shootTimer >= shootDelay)
+        if (Input.GetMouseButton(0) && shootTimer >= updateWeaponAttributes.getShootDelay())
         {
             if (currentWeaponSprite.currentWeapon == "pistol")
             {
                 FireBullet(GetNormalizedVector2FromPlayerPosToCrosshair());
                 shootTimer = 0f;
-                shootDelay = 0.25f;
-                bulletSpeed = 30f;
             }
 
             if (currentWeaponSprite.currentWeapon == "shotgun")
             {
                 ShootSpreadBullets(GetNormalizedVector2FromPlayerPosToCrosshair());
                 shootTimer = 0f;
-                shootDelay = 0.75f;
-                bulletSpeed = 15f;
             }
         }
         
@@ -58,7 +51,7 @@ public class PointAndShoot : MonoBehaviour
         GameObject b = Instantiate(bulletPrefab) as GameObject;
         b.transform.position = bulletStart.transform.position;
         b.transform.rotation = Quaternion.Euler(0.0f, 0.0f, GetRotationOfPlayerAndCrosshair());
-        b.GetComponent<Rigidbody2D>().velocity = direction * bulletSpeed;
+        b.GetComponent<Rigidbody2D>().velocity = direction * updateWeaponAttributes.getBulletSpeed();
         pistolShot.Play();
         
         Vector2 offset2 = direction * 0.01f;
@@ -69,8 +62,8 @@ public class PointAndShoot : MonoBehaviour
     void ShootSpreadBullets(Vector2 direction)
     {
         FireBullet(direction);
-        Quaternion spreadRotation1 = Quaternion.Euler(0.0f, 0.0f, shotgunSpreadAngle);
-        Quaternion spreadRotation2 = Quaternion.Euler(0.0f, 0.0f, -shotgunSpreadAngle);
+        Quaternion spreadRotation1 = Quaternion.Euler(0.0f, 0.0f, updateWeaponAttributes.getShotgunSpreadAngle());
+        Quaternion spreadRotation2 = Quaternion.Euler(0.0f, 0.0f, -updateWeaponAttributes.getShotgunSpreadAngle());
         
         FireBullet(spreadRotation1 * direction);
         FireBullet(spreadRotation2 * direction);
@@ -99,30 +92,5 @@ public class PointAndShoot : MonoBehaviour
     {
         float rotationZ = Mathf.Atan2(GetVector3FromPlayerPosToCrossHair().y, GetVector3FromPlayerPosToCrossHair().x) * Mathf.Rad2Deg;
         return rotationZ;
-    }
-
-
-
-
-
-    // public void UpdateShootDelay(float duration)
-    // {
-    //     if (!isFireRateHalved)
-    //     {
-    //         originalShootDelay = shootDelay;
-    //         shootDelay /= 2f;
-    //     }
-    //     shootDelay /= 2f;
-    //     if (shootDelay < originalShootDelay/2f)
-    //     {
-    //         shootDelay = originalShootDelay/2f;
-    //     }
-    //     StartCoroutine(RevertShootDelayAfterDelay(duration));
-    // }
-
-    private IEnumerator RevertShootDelayAfterDelay(float duration)
-    {
-        yield return new WaitForSeconds(duration);
-        shootDelay = originalShootDelay;
     }
 }

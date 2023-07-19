@@ -46,7 +46,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9d57b679d12c01498b0a0bb06321274, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  doublefirerateduration: 400
+  doublefirerateduration: 20
+  fireratePowerUpActivated: 0
 --- !u!212 &517543566776500491
 SpriteRenderer:
   m_ObjectHideFlags: 0

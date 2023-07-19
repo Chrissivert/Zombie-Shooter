@@ -40,7 +40,6 @@ public class ZombieCollision : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Bullet"))
         {
-            Debug.Log("Inside Enter");
             SetZombieHitByBullet(true);
 
             int randomDamage = CreateRandomDamage(minBulletDamage, maxBulletDamage);

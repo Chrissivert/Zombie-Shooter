@@ -1,21 +1,25 @@
+using System;
 using UnityEngine;
 
 public class IncreaseFireRate : MonoBehaviour
 {
     public float doublefirerateduration = 20f;
+    public bool fireratePowerUpActivated = false;
 
     private void OnCollisionStay2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+            fireratePowerUpActivated = true;
             Destroy(gameObject);
             DoublePlayersFireRate(collision.gameObject);
         }
+        Debug.Log(fireratePowerUpActivated);
     }
 
     public void DoublePlayersFireRate(GameObject player)
     {
-        PointAndShoot pointAndShoot = player.GetComponent<PointAndShoot>();
-        // pointAndShoot.UpdateShootDelay(doublefirerateduration);
+        UpdateWeaponAttributes updateWeaponAttributes = player.GetComponent<UpdateWeaponAttributes>();
+        updateWeaponAttributes.UpdateShootDelay(doublefirerateduration);
     }
 }

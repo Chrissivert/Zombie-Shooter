@@ -12,11 +12,6 @@ public class AmountOfZombiesText : MonoBehaviour
         textMesh = GetComponent<TextMesh>();
     }
 
-    private void Update()
-    {
-        Debug.Log("Current Zombie Count: " + AmountOfZombies(zombie.GetListOfZombies()));
-    }
-
     public int AmountOfZombies(List<GameObject> zombies)
     {
         int amountOfZombiesOnStage = 0;

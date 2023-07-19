@@ -67,6 +67,7 @@
      <Compile Include="Assets\C# Scripts\Camera\CreateZombie.cs" />
      <Compile Include="Assets\C# Scripts\Player\PlayerMovement.cs" />
      <Compile Include="Assets\C# Scripts\Zombie\SoundManagerZombie.cs" />
+     <Compile Include="Assets\C# Scripts\UpdateWeaponAttributes.cs" />
      <Compile Include="Assets\C# Scripts\Player\PlayerHealth.cs" />
      <Compile Include="Assets\C# Scripts\Zombie\Blood and Text\Blood.cs" />
      <Compile Include="Assets\C# Scripts\IncreaseSpeed.cs" />
