@@ -371,6 +371,7 @@
 -analyzer:"C:/Program Files/Unity/Hub/Editor/2022.3.1f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.Properties.SourceGenerator.dll"
 -analyzer:"C:/Program Files/Unity/Hub/Editor/2022.3.1f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.SourceGenerators.dll"
 "Assets/C# Scripts/AmountOfZombiesText.cs"
+"Assets/C# Scripts/BulletSpeedPowerUp.cs"
 "Assets/C# Scripts/Camera/CameraFollow.cs"
 "Assets/C# Scripts/Camera/CreateZombie.cs"
 "Assets/C# Scripts/CreateScoreTxt.cs"
