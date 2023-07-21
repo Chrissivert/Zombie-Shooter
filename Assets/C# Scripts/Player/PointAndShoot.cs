@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Tilemaps;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -11,7 +12,9 @@ public class PointAndShoot : MonoBehaviour
     public Direction direction;
     public GameObject grenade;
     public CurrentWeaponSprite currentWeaponSprite;
-    [FormerlySerializedAs("updateWeaponAttributes")] public WeaponAttributes weaponAttributes;
+    public WeaponAttributes weaponAttributes;
+    public PistolShoot pistolShoot;
+    public ShotgunShoot shotgunShoot;
     
     private float shootTimer = 0f;
 
@@ -25,29 +28,22 @@ public class PointAndShoot : MonoBehaviour
     void Update()
     {
         player.transform.rotation = Quaternion.Euler(0.0f, 0.0f, GetRotationOfPlayerAndCrosshair());
-
         shootTimer += Time.deltaTime;
 
-        if (Input.GetMouseButton(0) && shootTimer >= weaponAttributes.getShootDelay())
+        if (Input.GetMouseButton(0))
         {
-            if (currentWeaponSprite.currentWeapon == "pistol")
-            {
-                FireBullet(GetNormalizedVector2FromPlayerPosToCrosshair());
-                shootTimer = 0f;
-            }
-
-            if (currentWeaponSprite.currentWeapon == "shotgun")
-            {
-                ShootSpreadBullets(GetNormalizedVector2FromPlayerPosToCrosshair());
-                shootTimer = 0f;
-            }
+            if(currentWeaponSprite.currentWeapon == "pistol")
+            pistolShoot.PistolShot();
+            
+            if(currentWeaponSprite.currentWeapon == "shotgun")
+                shotgunShoot.ShotgunShot();
         }
         
         if (Input.GetKeyDown(KeyCode.I)) {
             ShootGrenade();
         }
     }
-    void FireBullet(Vector2 direction)
+    public void FireBullet(Vector2 direction)
     {
         GameObject b = Instantiate(bulletPrefab) as GameObject;
         b.transform.position = bulletStart.transform.position;
@@ -60,7 +56,7 @@ public class PointAndShoot : MonoBehaviour
         Destroy(b, 3f);
     }
     
-    void ShootSpreadBullets(Vector2 direction)
+    public void ShootSpreadBullets(Vector2 direction)
     {
         FireBullet(direction);
         Quaternion spreadRotation1 = Quaternion.Euler(0.0f, 0.0f, weaponAttributes.getShotgunSpreadAngle());
@@ -75,13 +71,13 @@ public class PointAndShoot : MonoBehaviour
         Instantiate(grenade, transform.position, Quaternion.identity);
     }
 
-    private Vector3 GetVector3FromPlayerPosToCrossHair()
+    public Vector3 GetVector3FromPlayerPosToCrossHair()
     {
         Vector3 difference = direction.DirectionUserIsPointingAt() - player.transform.position;
         return difference;
     }
 
-    private Vector2 GetNormalizedVector2FromPlayerPosToCrosshair()
+    public Vector2 GetNormalizedVector2FromPlayerPosToCrosshair()
     {
         float getLengthOfVector = GetVector3FromPlayerPosToCrossHair().magnitude;
         Vector2 directionVector = GetVector3FromPlayerPosToCrossHair() / getLengthOfVector;

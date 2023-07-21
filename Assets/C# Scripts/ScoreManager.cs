@@ -14,7 +14,6 @@ public class ScoreManager : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log(zombieCollision.GetZombieHitByBullet());
         if(zombieCollision.GetZombieHitByBullet() == true)
         {
             AddScore(10);

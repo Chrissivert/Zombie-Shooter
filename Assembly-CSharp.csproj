@@ -51,14 +51,15 @@
      <Compile Include="Assets\C# Scripts\Player\Direction.cs" />
      <Compile Include="Assets\C# Scripts\WeaponAttributes.cs" />
      <Compile Include="Assets\C# Scripts\Camera\CameraFollow.cs" />
+     <Compile Include="Assets\C# Scripts\PistolShoot.cs" />
      <Compile Include="Assets\C# Scripts\Zombie\Blood and Text\DamageText.cs" />
+     <Compile Include="Assets\C# Scripts\AmmoManager.cs" />
      <Compile Include="Assets\C# Scripts\ScoreVisual.cs" />
-     <Compile Include="Assets\C# Scripts\Shotgun.cs" />
      <Compile Include="Assets\C# Scripts\VolumeManager\VolumeManager.cs" />
      <Compile Include="Assets\C# Scripts\AmountOfZombiesText.cs" />
      <Compile Include="Assets\C# Scripts\Zombie\Zombie.cs" />
+     <Compile Include="Assets\ShotgunShoot.cs" />
      <Compile Include="Assets\C# Scripts\NukePowerUp.cs" />
-     <Compile Include="Assets\C# Scripts\PistolWeapon.cs" />
      <Compile Include="Assets\C# Scripts\CreateScoreTxt.cs" />
      <Compile Include="Assets\C# Scripts\ScreenFlash.cs" />
      <Compile Include="Assets\C# Scripts\CurrentWeaponSprite.cs" />
