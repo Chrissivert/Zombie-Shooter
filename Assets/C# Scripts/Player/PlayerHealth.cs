@@ -10,8 +10,7 @@ public class PlayerHealth : MonoBehaviour
     private float timer = 0f;
 
     [SerializeField] private AudioSource takeDamage;
-
-    // Update is called once per frame
+    
     void Update()
     {
         timer += Time.deltaTime;
