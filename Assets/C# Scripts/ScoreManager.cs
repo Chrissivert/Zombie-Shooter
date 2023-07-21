@@ -1,29 +1,41 @@
+using System;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class ScoreManager : MonoBehaviour
 {
-    public TextMesh scoreText;
-    public ZombieCollision zombieCollision;
-    int score = 0;
+    public TextMeshProUGUI scoreText;
+    public TextMeshProUGUI changeScoreText;
+    int score;
+    private float fadeTimer;
+    public float fadeDuration = 2f;
 
     private void Start()
     {
-        score = 5;
+        UpdateScoreText();
     }
 
     private void Update()
     {
-        if(zombieCollision.GetZombieHitByBullet() == true)
-        {
-            AddScore(10);
-        }
+        fadeTimer -= Time.deltaTime;
+
+            if (fadeTimer <= 0f)
+            {
+                //
+            }
+            else
+            {
+                float alpha = fadeTimer / fadeDuration;
+                changeScoreText.color = new Color(changeScoreText.color.r, changeScoreText.color.g, changeScoreText.color.b, alpha);
+            }
     }
 
-    public void AddScore(int scoreToAdd)
+    public int AddScore(int scoreToAdd)
     {
         score += scoreToAdd;
         UpdateScoreText();
+        return score;
     }
 
     public void RemoveScore(int scoreToRemove)
@@ -39,6 +51,7 @@ public class ScoreManager : MonoBehaviour
 
     public void UpdateScoreText()
     {
-        scoreText.text = score.ToString();
+        scoreText.text = ""+ score;
+        changeScoreText.text = "10";
     }
 }

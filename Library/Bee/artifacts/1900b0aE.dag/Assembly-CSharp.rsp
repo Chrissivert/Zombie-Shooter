@@ -376,7 +376,6 @@
 "Assets/C# Scripts/BulletSpeedPowerUp.cs"
 "Assets/C# Scripts/Camera/CameraFollow.cs"
 "Assets/C# Scripts/Camera/CreateZombie.cs"
-"Assets/C# Scripts/CreateScoreTxt.cs"
 "Assets/C# Scripts/CurrentWeaponSprite.cs"
 "Assets/C# Scripts/DoubleFireRate.cs"
 "Assets/C# Scripts/Grenade.cs"
@@ -399,6 +398,7 @@
 "Assets/C# Scripts/Zombie/SoundManagerZombie.cs"
 "Assets/C# Scripts/Zombie/Zombie.cs"
 "Assets/C# Scripts/Zombie/ZombieCollision.cs"
+"Assets/ScoreChangeText.cs"
 "Assets/ShotgunShoot.cs"
 -langversion:9.0
 

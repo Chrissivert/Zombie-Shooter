@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class ZombieCollision : MonoBehaviour
 {
@@ -13,13 +15,16 @@ public class ZombieCollision : MonoBehaviour
     public Zombie zombie;
     public Blood blood;
     public DamageText damageText;
+    // public ScoreChangeText scoreChangeText;
     PlayerHealth playerHealth;
-    public bool zombieHitByBullet = false;
+    ScoreManager scoreManager;
+    Vector3 randomPosition;
 
     private void Start()
     {
         GameObject player = GameObject.Find("Player");
         playerHealth = player.GetComponent<PlayerHealth>();
+        scoreManager = player.GetComponent<ScoreManager>();
     }
 
     private void Update()
@@ -40,8 +45,6 @@ public class ZombieCollision : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Bullet"))
         {
-            SetZombieHitByBullet(true);
-
             int randomDamage = CreateRandomDamage(minBulletDamage, maxBulletDamage);
 
             if (Random.value <= criticalHitChance)
@@ -50,13 +53,17 @@ public class ZombieCollision : MonoBehaviour
                 zombie.RemoveHealth(randomDamage);
                 blood.InstantiateBlood(transform.position);
                 damageText.InstantiateDamageText(randomDamage, transform.position, true);
+                // scoreChangeText.InstantiateScoreChangeText(10, randomPosition);
             }
             else
             {
                 zombie.RemoveHealth(randomDamage);
                 blood.InstantiateBlood(transform.position);
                 damageText.InstantiateDamageText(randomDamage, transform.position, false);
+                // scoreChangeText.InstantiateScoreChangeText(10, randomPosition);
             }
+            scoreManager.AddScore(10);
+            Debug.Log("Zombie health: " + scoreManager.GetScore());
             Destroy(collision.gameObject);
         }
     }
@@ -68,21 +75,4 @@ public class ZombieCollision : MonoBehaviour
         return randomDamage;
     }
 
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Bullet"))
-        {
-            SetZombieHitByBullet(false);
-        }
-    }
-
-    public void SetZombieHitByBullet(bool value)
-    {
-        zombieHitByBullet = value;
-    }
-
-    public bool GetZombieHitByBullet()
-    {
-        return zombieHitByBullet;
-    }
 }
