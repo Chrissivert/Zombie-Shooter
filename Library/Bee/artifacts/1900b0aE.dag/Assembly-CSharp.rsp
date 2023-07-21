@@ -398,7 +398,7 @@
 "Assets/C# Scripts/Zombie/SoundManagerZombie.cs"
 "Assets/C# Scripts/Zombie/Zombie.cs"
 "Assets/C# Scripts/Zombie/ZombieCollision.cs"
-"Assets/ScoreChangeText.cs"
+"Assets/ScoreUIUpdater.cs"
 "Assets/ShotgunShoot.cs"
 -langversion:9.0
 

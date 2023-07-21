@@ -7,51 +7,27 @@ public class ScoreManager : MonoBehaviour
 {
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI changeScoreText;
-    int score;
+    public int score;
     private float fadeTimer;
     public float fadeDuration = 2f;
-
-    private void Start()
-    {
-        UpdateScoreText();
-    }
-
-    private void Update()
-    {
-        fadeTimer -= Time.deltaTime;
-
-            if (fadeTimer <= 0f)
-            {
-                //
-            }
-            else
-            {
-                float alpha = fadeTimer / fadeDuration;
-                changeScoreText.color = new Color(changeScoreText.color.r, changeScoreText.color.g, changeScoreText.color.b, alpha);
-            }
-    }
+    public ScoreUIUpdater scoreUIUpdater;
 
     public int AddScore(int scoreToAdd)
     {
         score += scoreToAdd;
-        UpdateScoreText();
+        scoreUIUpdater.UpdateMainScoreText();
         return score;
     }
 
-    public void RemoveScore(int scoreToRemove)
+    public int RemoveScore(int scoreToRemove)
     {
         score -= scoreToRemove;
-        UpdateScoreText();
+        scoreUIUpdater.UpdateMainScoreText();
+        return score;
     }
 
     public int GetScore()
     {
         return score;
-    }
-
-    public void UpdateScoreText()
-    {
-        scoreText.text = ""+ score;
-        changeScoreText.text = "10";
     }
 }

@@ -7,11 +7,9 @@ public class PlayerMovement : MonoBehaviour
     private float originalMoveSpeed;
     public float moveSpeed = 5f;
     public float maxAllowedMoveSpeed = 100f;
-    public float test = 0f;
     public Rigidbody2D rb;
     private Vector2 moveDirection;
 
-    // Update is called once per frame
     void Update()
     {
         ProcessInputs();

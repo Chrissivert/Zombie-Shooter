@@ -52,37 +52,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   zombiehealth: 100
-  zombies:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  zombies: []
 --- !u!212 &5343502683870620781
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -191,7 +161,6 @@ MonoBehaviour:
   zombie: {fileID: 3101039789956499104}
   blood: {fileID: 6488823110593924756, guid: 29e9049773b506d46aa2a351a703db53, type: 3}
   damageText: {fileID: 8103831027528043079, guid: 55c1380a02dfa8a469c8fd6a4ad4cc5d, type: 3}
-  scoreChangeText: {fileID: 6661371596216947023, guid: af91f05862f295045906f3c517f67de7, type: 3}
 --- !u!50 &727522899614863438
 Rigidbody2D:
   serializedVersion: 4

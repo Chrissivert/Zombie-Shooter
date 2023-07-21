@@ -15,16 +15,16 @@ public class ZombieCollision : MonoBehaviour
     public Zombie zombie;
     public Blood blood;
     public DamageText damageText;
-    // public ScoreChangeText scoreChangeText;
     PlayerHealth playerHealth;
     ScoreManager scoreManager;
-    Vector3 randomPosition;
+    ScoreUIUpdater UIUpdater;
 
     private void Start()
     {
         GameObject player = GameObject.Find("Player");
         playerHealth = player.GetComponent<PlayerHealth>();
-        scoreManager = player.GetComponent<ScoreManager>();
+        GameObject test = GameObject.Find("UIUpdater");
+        test.GetComponent<ScoreUIUpdater>();
     }
 
     private void Update()
@@ -53,16 +53,17 @@ public class ZombieCollision : MonoBehaviour
                 zombie.RemoveHealth(randomDamage);
                 blood.InstantiateBlood(transform.position);
                 damageText.InstantiateDamageText(randomDamage, transform.position, true);
-                // scoreChangeText.InstantiateScoreChangeText(10, randomPosition);
+                UIUpdater.InstantiateChangeScoreText(10);
+                scoreManager.AddScore(10);
             }
             else
             {
                 zombie.RemoveHealth(randomDamage);
                 blood.InstantiateBlood(transform.position);
                 damageText.InstantiateDamageText(randomDamage, transform.position, false);
-                // scoreChangeText.InstantiateScoreChangeText(10, randomPosition);
+                UIUpdater.InstantiateChangeScoreText(10);
+                scoreManager.AddScore(10);
             }
-            scoreManager.AddScore(10);
             Debug.Log("Zombie health: " + scoreManager.GetScore());
             Destroy(collision.gameObject);
         }
