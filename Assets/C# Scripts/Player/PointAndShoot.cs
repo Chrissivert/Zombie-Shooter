@@ -32,11 +32,17 @@ public class PointAndShoot : MonoBehaviour
 
         if (Input.GetMouseButton(0))
         {
-            if(currentWeaponSprite.currentWeapon == "pistol")
-            pistolShoot.PistolShot();
-            
-            if(currentWeaponSprite.currentWeapon == "shotgun")
+            if (currentWeaponSprite.currentWeapon == "pistol")
+            {
+                weaponAttributes.PistolAttributes();
+                pistolShoot.PistolShot();
+            }
+
+            if (currentWeaponSprite.currentWeapon == "shotgun")
+            {
+                weaponAttributes.ShotgunAttributes();
                 shotgunShoot.ShotgunShot();
+            }
         }
         
         if (Input.GetKeyDown(KeyCode.I)) {
