@@ -60,6 +60,7 @@
      <Compile Include="Assets\C# Scripts\Zombie\Zombie.cs" />
      <Compile Include="Assets\ShotgunShoot.cs" />
      <Compile Include="Assets\C# Scripts\NukePowerUp.cs" />
+     <Compile Include="Assets\AmmoUIUpdater.cs" />
      <Compile Include="Assets\C# Scripts\CreateScoreTxt.cs" />
      <Compile Include="Assets\C# Scripts\ScreenFlash.cs" />
      <Compile Include="Assets\C# Scripts\CurrentWeaponSprite.cs" />
