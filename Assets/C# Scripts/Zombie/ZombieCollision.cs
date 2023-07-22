@@ -23,8 +23,10 @@ public class ZombieCollision : MonoBehaviour
     {
         GameObject player = GameObject.Find("Player");
         playerHealth = player.GetComponent<PlayerHealth>();
+        scoreManager = player.GetComponent<ScoreManager>();
+        
         GameObject test = GameObject.Find("UIUpdater");
-        test.GetComponent<ScoreUIUpdater>();
+        UIUpdater = test.GetComponent<ScoreUIUpdater>();
     }
 
     private void Update()

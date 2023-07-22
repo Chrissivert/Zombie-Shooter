@@ -5,11 +5,7 @@ using UnityEngine.UI;
 
 public class ScoreManager : MonoBehaviour
 {
-    public TextMeshProUGUI scoreText;
-    public TextMeshProUGUI changeScoreText;
     public int score;
-    private float fadeTimer;
-    public float fadeDuration = 2f;
     public ScoreUIUpdater scoreUIUpdater;
 
     public int AddScore(int scoreToAdd)

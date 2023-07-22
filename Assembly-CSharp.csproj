@@ -56,6 +56,7 @@
      <Compile Include="Assets\C# Scripts\AmmoManager.cs" />
      <Compile Include="Assets\C# Scripts\ScoreVisual.cs" />
      <Compile Include="Assets\C# Scripts\VolumeManager\VolumeManager.cs" />
+     <Compile Include="Assets\CreateUIUpdater.cs" />
      <Compile Include="Assets\C# Scripts\AmountOfZombiesText.cs" />
      <Compile Include="Assets\ScoreUIUpdater.cs" />
      <Compile Include="Assets\C# Scripts\Zombie\Zombie.cs" />
