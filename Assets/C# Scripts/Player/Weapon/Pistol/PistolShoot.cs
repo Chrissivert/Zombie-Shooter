@@ -11,6 +11,8 @@ public class PistolShoot : MonoBehaviour
     private float shootTimer = 0f;
     public PointAndShoot pointAndShoot;
     public AmmoManager ammoManager;
+    public AmmoUIUpdater ammoUIUpdater;
+    public WeaponAttributes weaponAttributes;
 
     private void Update()
     {

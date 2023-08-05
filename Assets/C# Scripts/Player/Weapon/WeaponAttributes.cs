@@ -3,8 +3,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UpdateBulletAttributes : MonoBehaviour
+public class WeaponAttributes : MonoBehaviour
 {
+    
+    public float bulletSpeed;
+    public float shootDelay;
+    public float shotgunSpreadAngle;
     public IncreaseFireRate increaseFireRate;
     public BulletSpeedPowerUp bulletSpeedPowerUp;
 
@@ -14,19 +18,38 @@ public class UpdateBulletAttributes : MonoBehaviour
         bulletSpeedPowerUp.bulletSpeedPowerUpActivated = false;
     }
 
-    private void Update()
+    public void PistolAttributes()
     {
-        if (increaseFireRate.fireratePowerUpActivated)
+        bulletSpeed = 15.0f;
+        shootDelay = 0.25f;
+        
+        if(increaseFireRate.fireratePowerUpActivated)
         {
-            UpdateShootDelay(10f);
+            shootDelay /= 2f;
         }
         
-        if (bulletSpeedPowerUp.bulletSpeedPowerUpActivated)
+        if(bulletSpeedPowerUp.bulletSpeedPowerUpActivated)
         {
-            UpdateBulletSpeed(10f);
+            bulletSpeed *= 2f;
         }
     }
 
+    public void ShotgunAttributes()
+    {
+        bulletSpeed = 5.0f;
+        shootDelay = 0.75f;
+        
+        if(increaseFireRate.fireratePowerUpActivated)
+        {
+            shootDelay /= 2f;
+        }
+        
+        if(bulletSpeedPowerUp.bulletSpeedPowerUpActivated)
+        {
+            bulletSpeed *= 2f;
+        }
+    }
+    
 
     public void UpdateShootDelay(float duration)
     {
@@ -51,5 +74,21 @@ public class UpdateBulletAttributes : MonoBehaviour
         bulletSpeedPowerUp.bulletSpeedPowerUpActivated = true;
         yield return new WaitForSeconds(duration);
         bulletSpeedPowerUp.bulletSpeedPowerUpActivated = false;
+    }
+    
+
+    public float getShotgunSpreadAngle()
+    {
+        return shotgunSpreadAngle;
+    }
+
+    public float getShootDelay()
+    {
+        return shootDelay;
+    }
+
+    public float getBulletSpeed()
+    {
+        return bulletSpeed;
     }
 }
