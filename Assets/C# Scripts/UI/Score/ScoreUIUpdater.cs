@@ -45,8 +45,6 @@ public class ScoreUIUpdater : MonoBehaviour
         fadeTimer = fadeDuration;
         GameObject damageInstance = Instantiate(changeScorePrefab, mainScoreText.transform.position, Quaternion.identity);
         GUIChangeScore = damageInstance.GetComponent<TextMeshProUGUI>();
-
-        GUIChangeScore.color = Color.yellow;
         GUIChangeScore.text = i.ToString();
     }
 }

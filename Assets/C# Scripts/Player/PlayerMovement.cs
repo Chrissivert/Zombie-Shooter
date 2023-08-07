@@ -37,17 +37,21 @@ public class PlayerMovement : MonoBehaviour
     {
         originalMoveSpeed = moveSpeed;
         moveSpeed = moveSpeed * moveSpeedMultiplier;
-        if (moveSpeed > maxAllowedMoveSpeed)
-        {
-            moveSpeed = maxAllowedMoveSpeed;
-        }
-
         StartCoroutine(RevertMovementSpeed(duration));
+        MaxAllowedMovementSpeed();
     }
 
     private IEnumerator RevertMovementSpeed(float duration)
     {
         yield return new WaitForSeconds(duration);
         originalMoveSpeed = moveSpeed;
+    }
+
+    private void MaxAllowedMovementSpeed()
+    {
+        if (moveSpeed > maxAllowedMoveSpeed)
+        {
+            moveSpeed = maxAllowedMoveSpeed;
+        }
     }
 }

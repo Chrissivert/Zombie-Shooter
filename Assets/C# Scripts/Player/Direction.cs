@@ -5,9 +5,7 @@ using static UnityEngine.GraphicsBuffer;
 
 public class Direction : MonoBehaviour
 {
-    public GameObject player;
     private Vector3 target;
-    public GameObject bulletStart;
     public Camera mainCamera;
     public GameObject crosshair;
     
@@ -15,7 +13,6 @@ public class Direction : MonoBehaviour
     {
         DirectionUserIsPointingAt();
         UpdateCrossHairPlacement();
-        // UpdateBulletStartRotation();
     }
 
     public Vector3 DirectionUserIsPointingAt()

@@ -42,6 +42,8 @@ public class PlayerHealth : MonoBehaviour
 
     }
 
+    
+    //Maybe put this method in UIScript
     public void UpdateHealthBar()
     {
         healthBar.fillAmount = healthAmount / 100f;
