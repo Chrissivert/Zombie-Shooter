@@ -8,17 +8,12 @@ public class PointAndShoot : MonoBehaviour
 {
     public GameObject player;
     public GameObject bulletPrefab;
+    public GameObject grenadePrefab;
     public GameObject bulletStart;
     public Direction direction;
-    public GameObject grenade;
-    public CurrentWeaponSprite currentWeaponSprite;
-    public WeaponAttributes weaponAttributes;
-    public PistolShoot pistolShoot;
-    public ShotgunShoot shotgunShoot;
-    
-    private float shootTimer = 0f;
+    public CurrentWeaponAttributes currentWeaponAttributes;
 
-    [SerializeField] private AudioSource pistolShot;
+    // [SerializeField] private AudioSource pistolShot;
     
     void Start()
     {
@@ -28,55 +23,36 @@ public class PointAndShoot : MonoBehaviour
     void Update()
     {
         player.transform.rotation = Quaternion.Euler(0.0f, 0.0f, GetRotationOfPlayerAndCrosshair());
+        float shootTimer = 0f;
         shootTimer += Time.deltaTime;
-
-        if (Input.GetMouseButton(0))
-        {
-            if (currentWeaponSprite.currentWeapon == "pistol")
-            {
-                weaponAttributes.PistolAttributes();
-                pistolShoot.PistolShot();
-            }
-
-            if (currentWeaponSprite.currentWeapon == "shotgun")
-            {
-                weaponAttributes.ShotgunAttributes();
-                shotgunShoot.ShotgunShot();
-            }
-        }
-        
-        if (Input.GetKeyDown(KeyCode.I)) {
-            ShootGrenade();
-        }
     }
-    public void FireBullet(Vector2 direction)
+    public void Bullet(Vector2 direction)
     {
         GameObject b = Instantiate(bulletPrefab) as GameObject;
         b.transform.position = bulletStart.transform.position;
         b.transform.rotation = Quaternion.Euler(0.0f, 0.0f, GetRotationOfPlayerAndCrosshair());
-        b.GetComponent<Rigidbody2D>().velocity = direction * weaponAttributes.getBulletSpeed();
-        pistolShot.Play();
+        b.GetComponent<Rigidbody2D>().velocity = direction * currentWeaponAttributes.getBulletSpeed();
+        // pistolShot.Play();
         
         Vector2 offset2 = direction * 0.01f;
         b.transform.position = new Vector2(b.transform.position.x + offset2.x, b.transform.position.y + offset2.y);
         Destroy(b, 3f);
     }
     
-    public void ShootSpreadBullets(Vector2 direction)
+    public void SpreadBullets(Vector2 direction)
     {
-        FireBullet(direction);
-        Quaternion spreadRotation1 = Quaternion.Euler(0.0f, 0.0f, weaponAttributes.getShotgunSpreadAngle());
-        Quaternion spreadRotation2 = Quaternion.Euler(0.0f, 0.0f, -weaponAttributes.getShotgunSpreadAngle());
-        
-        FireBullet(spreadRotation1 * direction);
-        FireBullet(spreadRotation2 * direction);
+        Bullet(direction);
+        Quaternion spreadRotation1 = Quaternion.Euler(0.0f, 0.0f, currentWeaponAttributes.getShotgunSpreadAngle());
+        Quaternion spreadRotation2 = Quaternion.Euler(0.0f, 0.0f, -currentWeaponAttributes.getShotgunSpreadAngle());
+        Bullet(spreadRotation1 * direction);
+        Bullet(spreadRotation2 * direction);
     }
-
-    private void ShootGrenade()
+    
+    public void InstantiateGrenade()
     {
-        Instantiate(grenade, transform.position, Quaternion.identity);
+        Instantiate(grenadePrefab, transform.position, Quaternion.identity);
     }
-
+    
     public Vector3 GetVector3FromPlayerPosToCrossHair()
     {
         Vector3 difference = direction.DirectionUserIsPointingAt() - player.transform.position;

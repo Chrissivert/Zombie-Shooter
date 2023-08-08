@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CurrentWeaponSprite : MonoBehaviour
 {
-    private SpriteRenderer spriteRenderer;
+    public SpriteRenderer spriteRenderer;
     public Sprite pistolSprite;
     public Sprite shotgunSprite;
     public string currentWeapon;

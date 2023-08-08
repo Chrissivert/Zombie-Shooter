@@ -8,9 +8,9 @@ public class Grenade : MonoBehaviour
 
     private Vector3 targetPos;
     public float greneadeSpeed;
-    public GameObject explosion;
+    public GameObject explosionPrefab;
     public float radius = 5;
-    public int ExplosionDamageToZombie = 1;
+    public int explosionDamageToZombie = 1;
     public DamageText damageText;
     private HashSet<Zombie> damagedZombies;
 
@@ -19,8 +19,7 @@ public class Grenade : MonoBehaviour
         targetPos = GameObject.Find("crosshair").transform.position;
         damagedZombies = new HashSet<Zombie>();
     }
-
-    // Update is called once per frame
+    
     void Update()
     {
         if (greneadeSpeed > 0)
@@ -31,16 +30,15 @@ public class Grenade : MonoBehaviour
         else if (greneadeSpeed <= 0)
         {
             greneadeSpeed = 0;
-            Destroy(gameObject);
             Explode();
+            Destroy(gameObject);
         }
     }
 
     void Explode()
     {
-        Instantiate(explosion, transform.position, Quaternion.identity);
+        Instantiate(explosionPrefab, transform.position, Quaternion.identity);
         DamageListofZombies();
-
     }
 
     public void DamageListofZombies()
@@ -52,8 +50,8 @@ public class Grenade : MonoBehaviour
             Zombie zombie = col.GetComponent<Zombie>();
             if (zombie != null && !damagedZombies.Contains(zombie))
             {
-                zombie.RemoveHealth(ExplosionDamageToZombie);
-                damageText.InstantiateDamageText(ExplosionDamageToZombie, zombie.transform.position, false);
+                zombie.RemoveHealth(explosionDamageToZombie);
+                damageText.InstantiateDamageText(explosionDamageToZombie, zombie.transform.position, false);
                 damagedZombies.Add(zombie);
             }
         }

@@ -7,7 +7,6 @@ public class CreateZombie : MonoBehaviour
 
     public Zombie zombie;
     public GameObject zombiePrefab;
-    public Transform playerPosition;
     public int amountOfZombiesToSpawn;
     public int amountOfWaves;
     public int timeBetweenWaves;
