@@ -4,9 +4,6 @@ Zombie Shooter in unity
 [Watch the Demo Video][https://youtu.be/cBSTHTtsfBI}
 
 
-*IMPORTANT*
-The latest version doesn't work
-
 The player can switch between a pistol and shotgun or use bombs to kill the zombies.
 The pistol fires one shot, while the shotgun fires three. The guns have a set amount
 of ammo.
