@@ -1,5 +1,8 @@
 # Zombie-Shooter
-Zombie Shooter in unity
+![image](https://github.com/user-attachments/assets/20ad7b8d-6bb3-4644-8f70-11ca210db692)
+
+
+Zombie Shooter made in Unity
 
 [Watch the Demo Video][https://youtu.be/cBSTHTtsfBI}
 
